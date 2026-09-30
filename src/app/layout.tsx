@@ -62,7 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       {/* body */}
       <body
         suppressHydrationWarning={true}
-        className="min-h-screen flex flex-col"
+        className="min-h-screen flex flex-col antialiased"
       >
         <Providers>
           <Announcement />

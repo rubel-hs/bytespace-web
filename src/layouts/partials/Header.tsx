@@ -44,7 +44,7 @@ const Header = () => {
   }, [pathname]);
 
   useEffect(() => {
-    const updateHeaderBackground = () => setHasScrolled(window.scrollY > 300);
+    const updateHeaderBackground = () => setHasScrolled(window.scrollY > 180);
 
     updateHeaderBackground();
     window.addEventListener("scroll", updateHeaderBackground, {
@@ -63,7 +63,7 @@ const Header = () => {
     >
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-0 z-0 bg-[#242528]/90 shadow-lg backdrop-blur-md transition-transform duration-300 ease-out ${
+        className={`pointer-events-none absolute inset-0 z-0 bg-[#242528]/90 shadow-lg backdrop-blur-md transition-transform duration-300 ease-out transform-gpu will-change-transform backface-hidden [transform:translateZ(0)] ${
           hasScrolled ? "translate-y-0" : "-translate-y-full"
         }`}
       />

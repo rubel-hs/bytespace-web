@@ -1,11 +1,17 @@
-import CourseFilterControls from "@/components/CourseFilterControls";
 import CourseGrid from "@/components/CourseGrid";
 import CourseSearchSubmit from "@/components/CourseSearchSubmit";
 import type { CourseFilters } from "@/lib/courseData";
 import { humanize } from "@/lib/utils/textConverter";
 import type { Course } from "@/types";
 import Link from "next/link";
-import { FaMagnifyingGlass } from "react-icons/fa6";
+import {
+  FaArrowDownWideShort,
+  FaChartSimple,
+  FaChevronDown,
+  FaLayerGroup,
+  FaMagnifyingGlass,
+  FaSliders,
+} from "react-icons/fa6";
 
 const CourseArchive = ({
   courses,
@@ -16,7 +22,6 @@ const CourseArchive = ({
   section,
   filters,
   categories,
-  levels,
 }: {
   courses: Course[];
   title: string;
@@ -71,11 +76,25 @@ const CourseArchive = ({
 
       <section className="section pt-12 lg:pt-16">
         <div className="container">
-          <CourseFilterControls
-            filters={filters}
-            categories={categories}
-            levels={levels}
-          />
+          <div className="mb-7 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-wrap gap-3">
+              <span className="course-filter">
+                <FaSliders /> Filter
+              </span>
+              <span className="course-filter">
+                <FaChartSimple /> Level{" "}
+                <FaChevronDown className="text-[10px]" />
+              </span>
+              <span className="course-filter">
+                <FaLayerGroup /> Category
+                <FaChevronDown className="text-[10px]" />
+              </span>
+            </div>
+            <span className="course-filter self-start lg:self-auto">
+              <FaArrowDownWideShort /> Most relevant
+              <FaChevronDown className="text-[10px]" />
+            </span>
+          </div>
 
           <nav
             className="mb-12 flex flex-wrap gap-3"
