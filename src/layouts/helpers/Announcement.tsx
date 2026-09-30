@@ -106,7 +106,7 @@ const Announcement: React.FC = () => {
   return (
     <div
       ref={announcementRef}
-      className="fixed inset-x-0 top-0 z-40 bg-dark bg-linear-to-r from-secondary via-secondary/85 to-primary/35 px-4 py-2.5 pr-12 text-sm text-light shadow-lg shadow-dark/15 transition-all duration-300 sm:py-3"
+      className="site-announcement fixed inset-x-0 top-0 z-40 bg-dark bg-linear-to-r from-secondary via-secondary/85 to-primary/35 px-4 py-2.5 pr-12 text-sm text-light shadow-lg shadow-dark/15 transition-all duration-300 sm:py-3"
     >
       <p
         className="relative z-10"

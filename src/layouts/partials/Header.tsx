@@ -58,7 +58,7 @@ const Header = () => {
     <header
       style={{ top: "var(--announcement-height, 0px)" }}
       className={`fixed inset-x-0 z-30 bg-transparent text-[#f5f5f6] transition-[top,height] duration-300 ease-out ${
-        hasScrolled ? "h-20" : "h-[120px]"
+        hasScrolled ? "h-20" : "h-[80px] lg:h-[120px]"
       }`}
     >
       <div
@@ -69,7 +69,7 @@ const Header = () => {
       />
       <nav
         aria-label="Primary navigation"
-        className="relative z-10 mx-auto flex h-full max-w-[1196px] items-center px-6 lg:px-0"
+        className="relative z-10 mx-auto flex h-full max-w-[1196px] items-center px-6 xl:px-0"
       >
         <Logo />
 
@@ -96,7 +96,7 @@ const Header = () => {
 
         <div
           id="header-navigation"
-          className={`${menuOpen ? "flex" : "hidden"} absolute inset-x-0 ${hasScrolled ? "top-20" : "top-[120px]"} flex-col gap-8 bg-[#242528] px-6 py-8 shadow-lg lg:static lg:ml-auto lg:flex lg:flex-row lg:items-center lg:gap-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
+          className={`${menuOpen ? "flex" : "hidden"} absolute inset-x-0 ${hasScrolled ? "top-20" : "top-[80px]"} flex-col gap-8 bg-[#242528] px-6 py-8 shadow-lg lg:static lg:ml-auto lg:flex lg:flex-row lg:items-center lg:gap-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
         >
           <ul className="flex flex-col gap-5 lg:absolute lg:left-1/2 lg:flex-row lg:gap-6 lg:-translate-x-1/2">
             {primaryNavigation.map(({ name, url }) => (

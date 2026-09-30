@@ -8,7 +8,7 @@
 }
 
 .section-ph {
-  @apply relative bg-secondary py-30 lg:pb-20 lg:pt-40 xl:pt-50 ;
+  @apply relative bg-secondary py-30 lg:pb-20 lg:pt-46 xl:pt-50;
   background-image: url("/images/shape/grids.svg");
   background-position: top left;
   background-size: cover;
@@ -209,4 +209,21 @@
 
 .course-content {
   @apply prose-headings:font-semibold prose-h2:mb-4! prose-h2:mt-8! prose-h2:text-xl! prose-h3:text-lg!;
+}
+/* Auth pages provide their own focused, full-screen chrome. */
+.auth-page {
+  background-color: var(--color-secondary);
+  background-image: url("/images/shape/grids.svg");
+  background-position: top center;
+  background-repeat: repeat;
+}
+
+body:has(.auth-page) > header,
+body:has(.auth-page) > footer,
+body:has(.auth-page) > .site-announcement {
+  display: none;
+}
+
+body:has(.auth-page) main.grow {
+  min-height: 100vh;
 }

@@ -14,28 +14,24 @@ const SearchModal = () => {
 
   // generate search result
   const doSearch = (searchData: ISearchItem[]) => {
-    const regex = new RegExp(`${searchString}`, "gi");
     if (searchString === "") {
       return [];
     } else {
       const searchResult = searchData.filter((item) => {
-        const title = item.frontmatter.title.toLowerCase().match(regex);
-        const description = item.frontmatter.description
-          ?.toLowerCase()
-          .match(regex);
-        const categories = item.frontmatter.categories
-          ?.join(" ")
-          .toLowerCase()
-          .match(regex);
-        const tags = item.frontmatter.tags
-          ?.join(" ")
-          .toLowerCase()
-          .match(regex);
-        const content = item.content.toLowerCase().match(regex);
+        const searchableText = [
+          item.frontmatter.title,
+          item.frontmatter.description,
+          item.frontmatter.category,
+          item.frontmatter.level,
+          item.frontmatter.categories?.join(" "),
+          item.frontmatter.tags?.join(" "),
+          item.content,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
 
-        if (title || content || description || categories || tags) {
-          return item;
-        }
+        return searchableText.includes(searchString);
       });
       return searchResult;
     }
@@ -136,7 +132,13 @@ const SearchModal = () => {
   }, [searchString]);
 
   return (
-    <div id="searchModal" className="search-modal">
+    <div
+      id="searchModal"
+      className="search-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Search ByteSpace"
+    >
       <div id="searchModalOverlay" className="search-modal-overlay" />
       <div className="search-wrapper">
         <div className="search-wrapper-header">
@@ -174,7 +176,7 @@ const SearchModal = () => {
           </label>
           <input
             id="searchInput"
-            placeholder="Search..."
+            placeholder="Search courses and creators..."
             className="search-wrapper-header-input"
             type="input"
             name="search"
@@ -184,7 +186,14 @@ const SearchModal = () => {
             autoComplete="off"
           />
         </div>
-        <SearchResult searchResult={searchResult} searchString={searchString} />
+        <SearchResult
+          searchResult={searchResult}
+          searchData={searchData}
+          searchString={searchString}
+          onResultClick={() =>
+            document.getElementById("searchModal")?.classList.remove("show")
+          }
+        />
         <div className="search-wrapper-footer">
           <span className="flex items-center">
             <kbd>

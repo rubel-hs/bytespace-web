@@ -1,7 +1,8 @@
 "use client";
 
 import { plainify, titleify } from "@/lib/utils/textConverter";
-import Image from "next/image";
+import ImageFallback from "@/helpers/ImageFallback";
+import Link from "next/link";
 
 export interface ISearchItem {
   group: string;
@@ -10,6 +11,10 @@ export interface ISearchItem {
     title: string;
     image?: string;
     description?: string;
+    category?: string;
+    level?: string;
+    course_creator?: string;
+    designation?: string;
     categories?: string[];
     tags?: string[];
   };
@@ -24,6 +29,10 @@ export interface ISearchGroup {
       title: string;
       image?: string;
       description?: string;
+      category?: string;
+      level?: string;
+      course_creator?: string;
+      designation?: string;
       categories?: string[];
       tags?: string[];
     };
@@ -34,10 +43,14 @@ export interface ISearchGroup {
 // search result component
 const SearchResult = ({
   searchResult,
+  searchData,
   searchString,
+  onResultClick,
 }: {
   searchResult: ISearchItem[];
+  searchData: ISearchItem[];
   searchString: string;
+  onResultClick: () => void;
 }) => {
   const getItemHref = (group: string, itemSlug: string) => {
     if (group === "course_creators") {
@@ -78,10 +91,18 @@ const SearchResult = ({
     return joinDataByGroup;
   };
   const finalResult = generateSearchGroup(searchResult);
+  const creatorBySlug = new Map(
+    searchData
+      .filter((item) => item.group === "course_creators")
+      .map((item) => [item.slug.split("/").pop(), item]),
+  );
+
+  const escapeRegExp = (value: string) =>
+    value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
   // match marker
   const matchMarker = (text: string, substring: string) => {
-    const parts = text.split(new RegExp(`(${substring})`, "gi"));
+    const parts = text.split(new RegExp(`(${escapeRegExp(substring)})`, "gi"));
     return parts.map((part, index) =>
       part.toLowerCase() === substring.toLowerCase() ? (
         <mark key={index}>{part}</mark>
@@ -93,7 +114,7 @@ const SearchResult = ({
 
   // match underline
   const matchUnderline = (text: string, substring: string) => {
-    const parts = text?.split(new RegExp(`(${substring})`, "gi"));
+    const parts = text?.split(new RegExp(`(${escapeRegExp(substring)})`, "gi"));
     return parts?.map((part, index) =>
       part.toLowerCase() === substring.toLowerCase() ? (
         <span key={index} className="underline">
@@ -145,93 +166,129 @@ const SearchResult = ({
                   {titleify(result.group)}
                 </p>
 
-                {result.groupItems.map((item) => (
-                  <div
-                    key={item.slug}
-                    id="searchItem"
-                    className="search-result-item"
-                  >
-                    {item.frontmatter.image && (
-                      <div className="search-result-item-image">
-                        <Image
-                          src={item.frontmatter.image}
-                          alt={item.frontmatter.title}
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                    )}
-                    <div className="search-result-item-body">
-                      <a
-                        href={getItemHref(result.group, item.slug)}
-                        className="search-result-item-title search-result-item-link"
-                      >
-                        {matchUnderline(item.frontmatter.title, searchString)}
-                      </a>
-                      {item.frontmatter.description && (
-                        <p className="search-result-item-description">
-                          {matchUnderline(
-                            item.frontmatter.description,
-                            searchString,
-                          )}
-                        </p>
+                {result.groupItems.map((item) => {
+                  const creator = item.frontmatter.course_creator
+                    ? creatorBySlug.get(item.frontmatter.course_creator)
+                    : undefined;
+                  const isCourse = result.group === "courses";
+
+                  return (
+                    <div
+                      key={item.slug}
+                      id="searchItem"
+                      className="search-result-item"
+                    >
+                      {(item.frontmatter.image || isCourse) && (
+                        <div className="search-result-item-image">
+                          <ImageFallback
+                            src={
+                              item.frontmatter.image ||
+                              "/images/image-placeholder.png"
+                            }
+                            fallback="/images/image-placeholder.png"
+                            alt={item.frontmatter.title}
+                            width={96}
+                            height={72}
+                            sizes="96px"
+                          />
+                        </div>
                       )}
-                      {item.content && (
-                        <p className="search-result-item-content">
-                          {matchContent(item.content, searchString)}
-                        </p>
-                      )}
-                      <div className="search-result-item-taxonomies">
-                        {item.frontmatter.categories &&
-                        item.frontmatter.categories.length > 0 ? (
-                          <div className="mr-2">
-                            <svg
-                              width="14"
-                              height="14"
-                              fill="currentColor"
-                              viewBox="0 0 16 16"
-                            >
-                              <path d="M11 0H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2 2 2 0 0 0 2-2V4a2 2 0 0 0-2-2 2 2 0 0 0-2-2zm2 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1V3zM2 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2z"></path>
-                            </svg>
-                            {item.frontmatter.categories.map(
-                              (category, index) => (
-                                <span key={category}>
-                                  {matchUnderline(category, searchString)}
-                                  {item.frontmatter.categories &&
-                                    index !==
-                                      item.frontmatter.categories.length -
-                                        1 && <>, </>}
-                                </span>
-                              ),
+                      <div className="search-result-item-body">
+                        <Link
+                          href={getItemHref(result.group, item.slug)}
+                          onClick={onResultClick}
+                          className="search-result-item-title search-result-item-link"
+                        >
+                          {matchUnderline(item.frontmatter.title, searchString)}
+                        </Link>
+                        {isCourse && creator && (
+                          <div className="search-result-item-author">
+                            <ImageFallback
+                              src={
+                                creator.frontmatter.image ||
+                                "/images/avatar.png"
+                              }
+                              fallback="/images/avatar.png"
+                              alt=""
+                              width={24}
+                              height={24}
+                              sizes="24px"
+                            />
+                            <span>By {creator.frontmatter.title}</span>
+                            {item.frontmatter.level && (
+                              <span className="search-result-item-level">
+                                {item.frontmatter.level}
+                              </span>
                             )}
                           </div>
-                        ) : null}
-                        {item.frontmatter.tags &&
-                        item.frontmatter.tags.length > 0 ? (
-                          <div className="mr-2">
-                            <svg
-                              width="14"
-                              height="14"
-                              fill="currentColor"
-                              viewBox="0 0 16 16"
-                            >
-                              <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"></path>
-                              <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"></path>
-                            </svg>
-                            {item.frontmatter.tags.map((tag, index) => (
-                              <span key={tag}>
-                                {matchUnderline(tag, searchString)}
-                                {item.frontmatter.tags &&
-                                  index !==
-                                    item.frontmatter.tags.length - 1 && <>, </>}
-                              </span>
-                            ))}
-                          </div>
-                        ) : null}
+                        )}
+                        {item.frontmatter.description && (
+                          <p className="search-result-item-description">
+                            {matchUnderline(
+                              item.frontmatter.description,
+                              searchString,
+                            )}
+                          </p>
+                        )}
+                        {item.content && (
+                          <p className="search-result-item-content">
+                            {matchContent(item.content, searchString)}
+                          </p>
+                        )}
+                        <div className="search-result-item-taxonomies">
+                          {item.frontmatter.categories &&
+                          item.frontmatter.categories.length > 0 ? (
+                            <div className="mr-2">
+                              <svg
+                                width="14"
+                                height="14"
+                                fill="currentColor"
+                                viewBox="0 0 16 16"
+                              >
+                                <path d="M11 0H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2 2 2 0 0 0 2-2V4a2 2 0 0 0-2-2 2 2 0 0 0-2-2zm2 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1V3zM2 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2z"></path>
+                              </svg>
+                              {item.frontmatter.categories.map(
+                                (category, index) => (
+                                  <span key={category}>
+                                    {matchUnderline(category, searchString)}
+                                    {item.frontmatter.categories &&
+                                      index !==
+                                        item.frontmatter.categories.length -
+                                          1 && <>, </>}
+                                  </span>
+                                ),
+                              )}
+                            </div>
+                          ) : null}
+                          {item.frontmatter.tags &&
+                          item.frontmatter.tags.length > 0 ? (
+                            <div className="mr-2">
+                              <svg
+                                width="14"
+                                height="14"
+                                fill="currentColor"
+                                viewBox="0 0 16 16"
+                              >
+                                <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"></path>
+                                <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"></path>
+                              </svg>
+                              {item.frontmatter.tags.map((tag, index) => (
+                                <span key={tag}>
+                                  {matchUnderline(tag, searchString)}
+                                  {item.frontmatter.tags &&
+                                    index !==
+                                      item.frontmatter.tags.length - 1 && (
+                                      <>, </>
+                                    )}
+                                </span>
+                              ))}
+                            </div>
+                          ) : null}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             ))
           ) : (
