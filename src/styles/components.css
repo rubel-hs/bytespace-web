@@ -1,10 +1,40 @@
 /* section style */
 .section {
-  @apply py-24 xl:py-28;
+  @apply py-16 xl:py-19 relative;
+}
+
+.section-box {
+  @apply py-16 xl:py-38 my-10 xl:my-19 relative bg-light rounded-[36px] lg:rounded-[80px];
+}
+
+.section-ph {
+  @apply py-30 lg:pt-40 xl:pt-50 relative lg:pb-37;
 }
 
 .section-sm {
-  @apply py-16 xl:py-20;
+  @apply py-10 xl:py-16;
+}
+
+.section-container {
+  @apply flex flex-col gap-10 lg:gap-16;
+}
+
+.section-intro {
+  .badge {
+    @apply mb-4;
+  }
+  .title {
+    @apply text-h3 lg:text-h2 mb-2 lg:col-10 mx-auto;
+  }
+  .subtitle {
+    @apply text-lg text-text lg:col-7 mx-auto;
+  }
+}
+.section-intro.centralize {
+  @apply text-center flex flex-col items-center gap-y-5;
+}
+.section-content {
+  @apply mb-0;
 }
 
 /* container */

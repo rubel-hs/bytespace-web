@@ -13,8 +13,11 @@ Depending on the user's specific request, **you MUST use the `view_file` tool to
 
 Read the specific file in `references/` based on the user's request:
 
-- **Adding a new page, route, or section:** 
+- **Adding a new page or route:**
   Read: `references/adding-new-pages.md`
+
+- **Adding a new reusable section:**
+  Read: `references/adding-new-sections.md`
 
 - **Using, modifying, or understanding UI components (e.g. BlogCard, SeoMeta):** 
   Read: `references/component-usage.md`

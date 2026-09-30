@@ -2,6 +2,8 @@ import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction";
+import DiscoverYourPassion from "@/partials/DiscoverYourPassion";
+import ExploreDiverseLearningPaths from "@/partials/ExploreDiverseLearningPaths";
 import HeroSection from "@/partials/HeroSection";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
@@ -18,6 +20,8 @@ const Home = () => {
   const {
     banner,
     features,
+    latest_courses,
+    explore_diverse_learning_paths,
     trusted_brands,
   }: {
     banner: {
@@ -38,6 +42,18 @@ const Home = () => {
         alt: string;
       }>;
     };
+    latest_courses: {
+      title: string;
+      content: string;
+    };
+    explore_diverse_learning_paths: {
+      title: string;
+      content: string;
+      list: Array<{
+        title: string;
+        svg_source: string;
+      }>;
+    };
     features: Feature[];
   } = frontmatter;
 
@@ -46,6 +62,8 @@ const Home = () => {
       <SeoMeta />
       <HeroSection data={banner} />
       <TrustedBrands data={trusted_brands} />
+      <DiscoverYourPassion data={latest_courses} />
+      <ExploreDiverseLearningPaths data={explore_diverse_learning_paths} />
 
       {features.map((feature, index: number) => (
         <section
@@ -54,22 +72,24 @@ const Home = () => {
         >
           <div className="container">
             <div className="row items-center justify-between">
+              {feature.image && (
+                <div
+                  className={`mb:md-0 mb-6 md:col-5 ${
+                    index % 2 !== 0 && "md:order-2"
+                  }`}
+                >
+                  <ImageFallback
+                    src={feature.image}
+                    height={480}
+                    width={520}
+                    alt={feature.title}
+                  />
+                </div>
+              )}
               <div
-                className={`mb:md-0 mb-6 md:col-5 ${
-                  index % 2 !== 0 && "md:order-2"
-                }`}
-              >
-                <ImageFallback
-                  src={feature.image}
-                  height={480}
-                  width={520}
-                  alt={feature.title}
-                />
-              </div>
-              <div
-                className={`md:col-7 lg:col-6 ${
-                  index % 2 !== 0 && "md:order-1"
-                }`}
+                className={`${
+                  feature.image ? "md:col-7 lg:col-6" : "md:col-12"
+                } ${index % 2 !== 0 && feature.image && "md:order-1"}`}
               >
                 <h2
                   className="mb-4"
@@ -79,15 +99,27 @@ const Home = () => {
                   className="mb-8 text-lg"
                   dangerouslySetInnerHTML={markdownify(feature.content)}
                 />
-                <ul>
-                  {feature.bulletpoints.map((bullet: string) => (
-                    <li className="relative mb-4 pl-6" key={bullet}>
-                      <FaCheck className={"absolute left-0 top-1.5"} />
-                      <span dangerouslySetInnerHTML={markdownify(bullet)} />
-                    </li>
-                  ))}
-                </ul>
-                {feature.button.enable && (
+                {feature.stats && (
+                  <dl className="grid grid-cols-3 gap-4">
+                    {feature.stats.map((stat) => (
+                      <div key={stat.label}>
+                        <dt className="text-sm">{stat.label}</dt>
+                        <dd className="text-2xl font-bold">{stat.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
+                {feature.bullet_points && (
+                  <ul>
+                    {feature.bullet_points.map((bullet: string) => (
+                      <li className="relative mb-4 pl-6" key={bullet}>
+                        <FaCheck className={"absolute left-0 top-1.5"} />
+                        <span dangerouslySetInnerHTML={markdownify(bullet)} />
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {feature.button?.enable && (
                   <Link
                     className="btn btn-primary mt-5"
                     href={feature.button.link}
