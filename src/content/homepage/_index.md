@@ -1,13 +1,13 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Next Project"
-  content: "Bytespace is a modern web platform built with Next and Tailwind CSS."
+  title: "Get Access to Hundreds Courses Available"
+  content: "Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses."
   image: "/images/banner.png"
-  button:
+  search:
     enable: true
-    label: "Explore Bytespace"
-    link: "#"
+    placeholder: "Course, topic, creator"
+    button_label: "Search"
 
 # Features
 features:
