@@ -20,8 +20,8 @@ const CreatorProfile = ({
 
   return (
     <>
-      <section className="course-grid-hero">
-        <div className="container relative z-10 py-32 text-white lg:py-40">
+      <section className="section-ph">
+        <div className="container relative z-10 text-white">
           <div className="flex flex-col gap-7 sm:flex-row sm:items-center">
             <ImageFallback
               src={image || "/images/avatar.png"}

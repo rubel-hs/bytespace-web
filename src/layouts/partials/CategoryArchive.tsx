@@ -14,8 +14,8 @@ const CategoryArchive = ({
   totalPages: number;
 }) => (
   <>
-    <section className="course-grid-hero">
-      <div className="container relative z-10 py-36 text-white lg:py-44">
+    <section className="section-ph">
+      <div className="container relative z-10 text-white">
         <p className="mb-4 font-secondary text-sm uppercase tracking-[0.22em] text-primary">
           Find your path
         </p>
@@ -35,7 +35,7 @@ const CategoryArchive = ({
               <Link
                 key={category}
                 href={`/categories/${category}`}
-                className="group rounded-[24px] border border-border p-7 transition duration-300 hover:-translate-y-1 hover:border-secondary hover:shadow-lg"
+                className="group rounded-[24px] border border-border p-7 transition duration-300 hover:border-secondary hover:card-shadow"
               >
                 <span className="flex size-12 items-center justify-center rounded-2xl bg-primary text-text-dark">
                   <FaLayerGroup />
@@ -45,7 +45,7 @@ const CategoryArchive = ({
                   <span>
                     {count} {count === 1 ? "course" : "courses"}
                   </span>
-                  <FaArrowRight className="transition group-hover:translate-x-1 group-hover:text-secondary" />
+                  <FaArrowRight className="transition-colors group-hover:text-secondary" />
                 </div>
               </Link>
             );

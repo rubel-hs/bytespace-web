@@ -74,7 +74,7 @@ const Testimonials = ({ data }: { data: PageData }) => {
         >
           {testimonials.map((item: Testimonial) => (
             <SwiperSlide key={item.name} className="h-auto!">
-              <article className="h-full rounded-3xl bg-body p-6">
+              <article className="h-full rounded-3xl bg-body p-6 transition-shadow duration-300 hover:card-shadow">
                 <ImageFallback
                   height={80}
                   width={80}

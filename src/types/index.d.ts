@@ -74,6 +74,7 @@ export type Course = {
     description?: string;
     image?: string;
     preview_video?: string;
+    date?: string;
     category: string;
     level: string;
     course_creator: string;

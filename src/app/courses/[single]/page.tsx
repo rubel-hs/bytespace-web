@@ -57,8 +57,8 @@ const CourseSingle = async ({
         description={description}
         image={image}
       />
-      <section className="course-grid-hero overflow-visible text-white">
-        <div className="container relative z-10 pb-16 pt-32 lg:pb-0 lg:pt-40">
+      <section className="section-ph overflow-visible text-white">
+        <div className="container relative z-10">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
             <div>
               <h1 className="max-w-4xl text-h2-sm font-semibold text-white lg:text-h2">
@@ -104,7 +104,7 @@ const CourseSingle = async ({
             </button>
           </div>
 
-          <div className="relative mt-14 pb-20">
+          <div className="relative mt-14 pb-4">
             <div className="relative overflow-hidden rounded-[28px] bg-light lg:w-[calc(66.666%-1.25rem)]">
               <ImageFallback
                 src={image || "/images/image-placeholder.png"}

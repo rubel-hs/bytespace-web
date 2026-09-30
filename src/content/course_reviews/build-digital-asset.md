@@ -29,4 +29,32 @@ reviews:
     date: 2025-09-12T00:00:00Z
     content: "The lessons on optimizing digital assets for different platforms were particularly insightful. The course adapts to the evolving digital landscape, and the engaging content kept me motivated throughout."
 
+  - reviewer_name: "Leslie Alexander"
+    reviewer_role: "Digital Creator"
+    reviewer_image: "/images/avatars/avatar-04.jpg"
+    rating: 5
+    date: 2025-09-05T00:00:00Z
+    content: "The monetization strategies module opened revenue streams I had never considered for my digital work."
+
+  - reviewer_name: "Marvin McKinney"
+    reviewer_role: "Graphic Designer"
+    reviewer_image: "/images/avatars/avatar-07.jpg"
+    rating: 4
+    date: 2025-08-29T00:00:00Z
+    content: "The advanced techniques section pushed my skills well beyond the basics. My workflows are much faster now."
+
+  - reviewer_name: "Esther Howard"
+    reviewer_role: "Content Designer"
+    reviewer_image: "/images/avatars/avatar-09.jpg"
+    rating: 5
+    date: 2025-08-22T00:00:00Z
+    content: "Asset management best practices alone were worth it. My entire library is finally organized."
+
+  - reviewer_name: "Guy Hawkins"
+    reviewer_role: "Freelance Artist"
+    reviewer_image: "/images/avatars/avatar-13.jpg"
+    rating: 5
+    date: 2025-08-15T00:00:00Z
+    content: "The capstone portfolio project landed me two new clients. The critique sessions sharpened everything."
+
 ---

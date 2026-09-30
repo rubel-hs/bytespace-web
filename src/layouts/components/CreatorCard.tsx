@@ -9,7 +9,7 @@ const CreatorCard = ({ creator }: { creator: CourseCreator }) => {
     creator.frontmatter;
 
   return (
-    <article className="flex h-full flex-col items-center rounded-[24px] border border-border bg-body p-7 text-center transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <article className="flex h-full flex-col items-center rounded-[24px] border border-border bg-body p-7 text-center transition duration-300 hover:card-shadow">
       <ImageFallback
         src={image || "/images/avatar.png"}
         fallback="/images/avatar.png"

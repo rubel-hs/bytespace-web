@@ -1,5 +1,9 @@
 import config from "@/config/config.json";
-import { getCategories, getCoursesByCategory } from "@/lib/courseData";
+import {
+  getCategories,
+  getCoursesByCategory,
+  getLevels,
+} from "@/lib/courseData";
 import { humanize } from "@/lib/utils/textConverter";
 import CourseArchive from "@/partials/CourseArchive";
 import SeoMeta from "@/partials/SeoMeta";
@@ -29,6 +33,9 @@ const CategorySingle = async (props: {
         currentPage={1}
         totalPages={totalPages}
         section={`categories/${single}`}
+        filters={{ category: single }}
+        categories={getCategories()}
+        levels={getLevels()}
       />
     </>
   );

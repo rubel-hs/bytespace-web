@@ -1,13 +1,24 @@
 import config from "@/config/config.json";
 import { getListPage } from "@/lib/contentParser";
-import { getCourses } from "@/lib/courseData";
+import {
+  filterCourses,
+  getCategories,
+  getCourses,
+  getLevels,
+  type CourseFilters,
+} from "@/lib/courseData";
 import CourseArchive from "@/partials/CourseArchive";
 import SeoMeta from "@/partials/SeoMeta";
 import type { RegularPage } from "@/types";
 
-const Courses = () => {
+const Courses = async ({
+  searchParams,
+}: {
+  searchParams: Promise<CourseFilters>;
+}) => {
+  const filters = await searchParams;
   const index = getListPage("courses/_index.md") as RegularPage;
-  const courses = getCourses();
+  const courses = filterCourses(getCourses(), filters);
   const totalPages = Math.ceil(courses.length / config.settings.pagination);
   const currentCourses = courses.slice(0, config.settings.pagination);
   const { title, meta_title, description, image } = index.frontmatter;
@@ -27,6 +38,9 @@ const Courses = () => {
         currentPage={1}
         totalPages={totalPages}
         section="courses"
+        filters={filters}
+        categories={getCategories()}
+        levels={getLevels()}
       />
     </>
   );

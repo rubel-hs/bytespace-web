@@ -99,7 +99,7 @@ const CourseReviews = ({
           filteredReviews.map((review) => (
             <article
               key={`${review.reviewer_name}-${review.date}`}
-              className="rounded-[20px] border border-border p-6 lg:p-8"
+              className="rounded-[20px] border border-border p-6 transition-shadow duration-300 hover:card-shadow lg:p-8"
             >
               <div className="flex items-center gap-4">
                 <ImageFallback

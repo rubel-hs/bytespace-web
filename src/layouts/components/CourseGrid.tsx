@@ -7,11 +7,13 @@ const CourseGrid = ({
   currentPage,
   totalPages,
   section,
+  query,
 }: {
   courses: Course[];
   currentPage: number;
   totalPages: number;
   section: string;
+  query?: Record<string, string>;
 }) => (
   <>
     {courses.length ? (
@@ -31,6 +33,7 @@ const CourseGrid = ({
         section={section}
         currentPage={currentPage}
         totalPages={totalPages}
+        query={query}
       />
     </div>
   </>

@@ -29,7 +29,7 @@ const CourseCard = ({ course }: { course: Course }) => {
   );
 
   return (
-    <article className="group flex h-full flex-col rounded-[24px] border border-border bg-body p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <article className="group flex h-full flex-col rounded-[24px] border border-border bg-body p-4 transition duration-300 hover:card-shadow">
       <Link
         href={`/courses/${slug}`}
         className="relative block overflow-hidden rounded-[18px] bg-light"

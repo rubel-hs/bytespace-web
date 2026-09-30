@@ -45,14 +45,14 @@ const ExploreDiverseLearningPaths = ({
           </div>
 
           <div className="section-content">
-            <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 justify-center mx-auto">
               {learningPaths.map(({ category, icon }) => (
                 <li key={category}>
                   <Link
                     href={`/categories/${category}`}
                     className="block h-full rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary"
                   >
-                    <article className="flex h-full min-h-36 flex-col items-center justify-center gap-4 rounded-2xl border border-border bg-body px-3 py-6 text-center transition-shadow duration-300 hover:shadow-lg">
+                    <article className="flex h-full min-h-36 flex-col items-center justify-center gap-4 rounded-2xl border border-border bg-body px-3 py-6 text-center transition-shadow duration-300 hover:card-shadow">
                       <Image
                         src={icon}
                         alt=""

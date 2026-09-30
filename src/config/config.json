@@ -15,7 +15,7 @@
     "search": true,
     "searchable_folders": ["courses", "course_creators"],
     "sticky_header": true,
-    "pagination": 2,
+    "pagination": 6,
     "summary_length": 200
   },
 

@@ -16,8 +16,8 @@ const CreatorArchive = ({
   totalPages: number;
 }) => (
   <>
-    <section className="course-grid-hero">
-      <div className="container relative z-10 py-36 text-white lg:py-44">
+    <section className="section-ph">
+      <div className="container relative z-10 text-white">
         <p className="mb-4 font-secondary text-sm uppercase tracking-[0.22em] text-primary">
           People worth learning from
         </p>
