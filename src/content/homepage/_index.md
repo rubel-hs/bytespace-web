@@ -48,7 +48,7 @@ explore_diverse_learning_paths:
 features:
   - title: "Your Path to Professional Growth Starts Here!"
     content: "Explore our curated selection of courses tailored to enhance your capabilities and accelerate your career journey. Whether you are looking to sharpen specific skills, gain industry expertise, or embark on a new career path entirely, we have the resources you need."
-    image: ""
+    image: "/images/service-1.png"
     stats:
       - value: "12K"
         label: "Students"
@@ -58,8 +58,8 @@ features:
         label: "Creators"
 
   - title: "Create & Manage Courses Easily."
-    content: "ByteSpace supports individuals or entities in the creation, publication, and administration of educational courses."
-    image: ""
+    content: "**ByteSpace** supports individuals or entities in the creation, publication, and administration of educational courses."
+    image: "/images/service-2.png"
     bullet_points:
       - "Share Your Expertise"
       - "Monetize Your Passion"
