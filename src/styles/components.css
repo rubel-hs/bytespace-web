@@ -10,7 +10,7 @@
 .section-ph {
   @apply relative bg-secondary py-30 lg:pb-37 lg:pt-40 xl:pt-50;
   background-image: url("/images/shape/grids.svg");
-  background-position: center;
+  background-position: top left;
   background-size: cover;
 }
 
