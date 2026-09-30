@@ -30,19 +30,6 @@ latest_courses:
 explore_diverse_learning_paths:
   title: Explore Diverse Learning Paths at Bytespace
   content: At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there's something for everyone. Unleash your potential and explore our carefully curated categories.
-  list:
-    - title: Design
-      svg_source: /images/icons/Design.svg
-    - title: Development
-      svg_source: /images/icons/Development.svg
-    - title: IT & Software
-      svg_source: /images/icons/IT & Software.svg
-    - title: Business
-      svg_source: /images/icons/Business.svg
-    - title: Marketing
-      svg_source: /images/icons/Marketing.svg
-    - title: Photography
-      svg_source: /images/icons/Photography.svg
 
 # Features
 features:

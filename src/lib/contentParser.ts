@@ -82,7 +82,9 @@ export const getSinglePage = (folder: string) => {
   );
   const filterByDate = publishedPages.filter(
     (page) =>
-      buildFuture || new Date(page.frontmatter.date || new Date()) <= now,
+      buildFuture ||
+      !page.frontmatter.date ||
+      new Date(page.frontmatter.date) <= now,
   );
 
   return filterByDate;

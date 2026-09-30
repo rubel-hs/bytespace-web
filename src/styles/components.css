@@ -8,7 +8,10 @@
 }
 
 .section-ph {
-  @apply py-30 lg:pt-40 xl:pt-50 relative lg:pb-37;
+  @apply relative bg-secondary py-30 lg:pb-20 lg:pt-40 xl:pt-50 ;
+  background-image: url("/images/shape/grids.svg");
+  background-position: top left;
+  background-size: cover;
 }
 
 .section-sm {
@@ -198,4 +201,12 @@
   @apply prose-th:relative prose-th:z-10 prose-th:px-4! prose-th:py-[18px]! prose-th:text-text-dark;
   @apply prose-tr:border-border;
   @apply prose-td:relative prose-td:z-10 prose-td:px-3! prose-td:py-[18px]!;
+}
+
+.course-filter {
+  @apply inline-flex items-center gap-2 rounded-full border border-border bg-body px-5 py-2.5 text-sm text-text-dark;
+}
+
+.course-content {
+  @apply prose-headings:font-semibold prose-h2:mb-4! prose-h2:mt-8! prose-h2:text-xl! prose-h3:text-lg!;
 }

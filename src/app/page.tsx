@@ -1,5 +1,6 @@
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
+import { getCategories, getCourses } from "@/lib/courseData";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction";
 import DiscoverYourPassion from "@/partials/DiscoverYourPassion";
@@ -16,6 +17,17 @@ const Home = () => {
   const homepage = getListPage("homepage/_index.md");
   const testimonial = getListPage("sections/testimonial.md");
   const callToAction = getListPage("sections/call-to-action.md");
+  const courseCategories = getCategories();
+  const courses = getCourses().toSorted((a, b) => {
+    const firstDate = a.frontmatter.date
+      ? new Date(a.frontmatter.date).valueOf()
+      : 0;
+    const secondDate = b.frontmatter.date
+      ? new Date(b.frontmatter.date).valueOf()
+      : 0;
+
+    return secondDate - firstDate;
+  });
   const { frontmatter } = homepage;
   const {
     banner,
@@ -49,10 +61,6 @@ const Home = () => {
     explore_diverse_learning_paths: {
       title: string;
       content: string;
-      list: Array<{
-        title: string;
-        svg_source: string;
-      }>;
     };
     features: Feature[];
   } = frontmatter;
@@ -62,8 +70,15 @@ const Home = () => {
       <SeoMeta />
       <HeroSection data={banner} />
       <TrustedBrands data={trusted_brands} />
-      <DiscoverYourPassion data={latest_courses} />
-      <ExploreDiverseLearningPaths data={explore_diverse_learning_paths} />
+      <DiscoverYourPassion
+        data={latest_courses}
+        courses={courses}
+        categories={courseCategories}
+      />
+      <ExploreDiverseLearningPaths
+        data={explore_diverse_learning_paths}
+        categories={courseCategories}
+      />
 
       {
         features && features.length > 0 && (

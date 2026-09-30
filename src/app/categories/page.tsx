@@ -1,41 +1,22 @@
 import config from "@/config/config.json";
-import { getAllTaxonomy, getTaxonomy } from "@/lib/taxonomyParser";
-import { humanize } from "@/lib/utils/textConverter";
-import PageHeader from "@/partials/PageHeader";
+import { getCategories } from "@/lib/courseData";
+import CategoryArchive from "@/partials/CategoryArchive";
 import SeoMeta from "@/partials/SeoMeta";
-import Link from "next/link";
 
 const Categories = () => {
-  const { blog_folder } = config.settings;
-  const categories = getTaxonomy(blog_folder, "categories");
-  const allCategories = getAllTaxonomy(blog_folder, "categories");
-
+  const categories = getCategories();
+  const totalPages = Math.ceil(categories.length / config.settings.pagination);
   return (
     <>
-      <SeoMeta title={"Categories"} />
-      <PageHeader title={"Categories"} />
-      <section className="section">
-        <div className="container text-center">
-          <ul>
-            {categories.map((category: string) => {
-              const count = allCategories.filter(
-                (c: string) => c === category,
-              ).length;
-              return (
-                <li className="m-3 inline-block" key={category}>
-                  <Link
-                    href={`/categories/${category}`}
-                    className="block rounded bg-light px-4 py-2 text-xl text-text-dark  "
-                  >
-                    {humanize(category)}{" "}
-                    <span className="ml-2 rounded bg-body px-2 ">{count}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
+      <SeoMeta
+        title="Course Categories"
+        description="Browse ByteSpace courses by category."
+      />
+      <CategoryArchive
+        categories={categories.slice(0, config.settings.pagination)}
+        currentPage={1}
+        totalPages={totalPages}
+      />
     </>
   );
 };
