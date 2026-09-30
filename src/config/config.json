@@ -20,7 +20,7 @@
   },
 
   "announcement": {
-    "enable": true,
+    "enable": false,
     "content": "<span class='text-center block'>45% Flat Discount on all courses till October 12th</span>",
     "expire_days": 7
   },
