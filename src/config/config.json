@@ -13,16 +13,15 @@
 
   "settings": {
     "search": true,
-    "searchable_folders": ["blog", "authors"],
+    "searchable_folders": ["courses", "course_creators"],
     "sticky_header": true,
     "pagination": 2,
-    "summary_length": 200,
-    "blog_folder": "blog"
+    "summary_length": 200
   },
 
   "announcement": {
     "enable": true,
-    "content": "<span class='text-center block'>Welcome to Bytespace</span>",
+    "content": "<span class='text-center block'>45% Flat Discount on all courses till October 12th</span>",
     "expire_days": 7
   },
 

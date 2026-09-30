@@ -2,7 +2,7 @@
 title: "Build Digital Asset: A Comprehensive Guide"
 meta_title: "Build Digital Asset: A Comprehensive Guide"
 description: "Unlock the power of digital creation with expert guidance."
-image: "/images/image-placeholder.png"
+image: "/images/course_thumbnails/course-01.jpg"
 preview_video: ""
 
 # Required relations and filter fields
@@ -78,10 +78,8 @@ In the initial modules, you'll establish a solid foundation by immersing yoursel
 As you progress through the course, you'll ascend to higher levels of expertise, delving into the nuances of design principles that drive impactful creations. Uncover the secrets behind effective visual communication, exploring color theory, typography, and layout strategies that elevate your digital assets to new heights. Engage in hands-on exercises that reinforce your understanding, allowing you to apply these principles in practical scenarios.
 
 ## Sneak Peak
-![image](/images/course/Rectangle.png)
-![image](/images/course/Rectangle-1.png)
-![image](/images/course/Rectangle-2.png)
-![image](/images/course/Rectangle-3.png)
+
+<Gallery images="/images/course/Rectangle.png|/images/course/Rectangle-1.png|/images/course/Rectangle-2.png|/images/course/Rectangle-3.png" alt="Build Digital Assets course preview" />
 
 ## Key Points
 

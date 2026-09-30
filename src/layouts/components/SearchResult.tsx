@@ -39,6 +39,12 @@ const SearchResult = ({
   searchResult: ISearchItem[];
   searchString: string;
 }) => {
+  const getItemHref = (group: string, itemSlug: string) => {
+    if (group === "course_creators") {
+      return `/creators/${itemSlug.split("/").pop()}`;
+    }
+    return `/${itemSlug}`;
+  };
   // generate search result group
   const generateSearchGroup = (searchResult: ISearchItem[]) => {
     const joinDataByGroup: ISearchGroup[] = searchResult.reduce(
@@ -157,7 +163,7 @@ const SearchResult = ({
                     )}
                     <div className="search-result-item-body">
                       <a
-                        href={`/${item.slug}`}
+                        href={getItemHref(result.group, item.slug)}
                         className="search-result-item-title search-result-item-link"
                       >
                         {matchUnderline(item.frontmatter.title, searchString)}

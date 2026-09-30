@@ -61,6 +61,74 @@ export type Author = {
   slug?: string;
 };
 
+export type CoursePrice = {
+  amount: number;
+  currency: string;
+  billing_label: string;
+};
+
+export type Course = {
+  frontmatter: {
+    title: string;
+    meta_title?: string;
+    description?: string;
+    image?: string;
+    preview_video?: string;
+    category: string;
+    level: string;
+    course_creator: string;
+    price: CoursePrice;
+    stats: {
+      students: number;
+      lesson_count: number;
+      duration: string;
+    };
+    featured_lessons?: Array<{ title: string; duration: string }>;
+    includes?: string[];
+    modules?: Array<{ title: string; description: string }>;
+    sneak_peek?: string[];
+    key_points?: string[];
+    draft?: boolean;
+  };
+  slug?: string;
+  content: string;
+};
+
+export type CourseCreator = {
+  frontmatter: {
+    title: string;
+    meta_title?: string;
+    description?: string;
+    image?: string;
+    designation?: string;
+    specialties?: string[];
+    followers?: number;
+    social?: Array<{ name: string; icon: string; link: string }>;
+    draft?: boolean;
+  };
+  slug?: string;
+  content: string;
+};
+
+export type CourseReview = {
+  reviewer_name: string;
+  reviewer_role?: string;
+  reviewer_image?: string;
+  rating: number;
+  date: string;
+  content: string;
+};
+
+export type CourseReviewCollection = {
+  frontmatter: {
+    course: string;
+    reviews: CourseReview[];
+    draft?: boolean;
+  };
+  slug?: string;
+  content: string;
+};
+
 export type Feature = {
   button?: button;
   image: string;

@@ -28,7 +28,11 @@ const Header = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const { main: primaryNavigation, utility: utilityNavigation, cart } = menu as {
+  const {
+    main: primaryNavigation,
+    utility: utilityNavigation,
+    cart,
+  } = menu as {
     main: NavigationLink[];
     utility: NavigationLink[];
     cart: { url: string };
@@ -43,14 +47,17 @@ const Header = () => {
     const updateHeaderBackground = () => setHasScrolled(window.scrollY > 300);
 
     updateHeaderBackground();
-    window.addEventListener("scroll", updateHeaderBackground, { passive: true });
+    window.addEventListener("scroll", updateHeaderBackground, {
+      passive: true,
+    });
 
     return () => window.removeEventListener("scroll", updateHeaderBackground);
   }, []);
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-30 bg-transparent text-[#f5f5f6] transition-[height] duration-300 ease-out ${
+      style={{ top: "var(--announcement-height, 0px)" }}
+      className={`fixed inset-x-0 z-30 bg-transparent text-[#f5f5f6] transition-[top,height] duration-300 ease-out ${
         hasScrolled ? "h-20" : "h-[120px]"
       }`}
     >

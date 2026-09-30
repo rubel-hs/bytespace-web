@@ -2,7 +2,7 @@
 title: "PurePearl Studio"
 meta_title: "PurePearl Studio — ByteSpace Creator"
 description: "Passionate UI/UX and web designer creating practical learning experiences."
-image: "/images/avatars/avatar-18.jpg"
+image: "/images/avatars/creator_1.png"
 designation: "Professional Creator"
 specialties:
   - "UI/UX Design"

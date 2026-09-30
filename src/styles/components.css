@@ -199,3 +199,18 @@
   @apply prose-tr:border-border;
   @apply prose-td:relative prose-td:z-10 prose-td:px-3! prose-td:py-[18px]!;
 }
+
+.course-grid-hero {
+  @apply relative overflow-hidden bg-secondary;
+  background-image: url("/images/shape/grids.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+.course-filter {
+  @apply inline-flex items-center gap-2 rounded-full border border-border bg-body px-5 py-2.5 text-sm text-text-dark;
+}
+
+.course-content {
+  @apply prose-headings:font-semibold prose-h2:mb-4! prose-h2:mt-8! prose-h2:text-xl! prose-h3:text-lg!;
+}
