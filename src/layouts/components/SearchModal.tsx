@@ -53,23 +53,25 @@ const SearchModal = () => {
     const searchInput = document.getElementById("searchInput");
     const searchModalOverlay = document.getElementById("searchModalOverlay");
     const searchResultItems = document.querySelectorAll("#searchItem");
-    const searchModalTriggers = document.querySelectorAll(
-      "[data-search-trigger]",
-    );
 
-    // search modal open
-    searchModalTriggers.forEach((button) => {
-      button.addEventListener("click", function () {
-        const searchModal = document.getElementById("searchModal");
-        searchModal!.classList.add("show");
-        searchInput!.focus();
-      });
-    });
+    const handleSearchTrigger = (event: MouseEvent) => {
+      if (
+        !(event.target instanceof Element) ||
+        !event.target.closest("[data-search-trigger]")
+      ) {
+        return;
+      }
+
+      searchModal?.classList.add("show");
+      searchInput?.focus();
+    };
+
+    const closeSearchModal = () => searchModal?.classList.remove("show");
+
+    document.addEventListener("click", handleSearchTrigger);
 
     // search modal close
-    searchModalOverlay!.addEventListener("click", function () {
-      searchModal!.classList.remove("show");
-    });
+    searchModalOverlay?.addEventListener("click", closeSearchModal);
 
     // keyboard navigation
     let selectedIndex = -1;
@@ -89,7 +91,7 @@ const SearchModal = () => {
       });
     };
 
-    document.addEventListener("keydown", function (event) {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key === "k") {
         searchModal!.classList.add("show");
         searchInput!.focus();
@@ -122,7 +124,15 @@ const SearchModal = () => {
       }
 
       updateSelection();
-    });
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("click", handleSearchTrigger);
+      searchModalOverlay?.removeEventListener("click", closeSearchModal);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, [searchString]);
 
   return (

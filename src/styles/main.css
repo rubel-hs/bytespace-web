@@ -15,6 +15,7 @@
 }
 
 @layer components {
+  @import "./animations.css";
   @import "./components.css";
   @import "./navigation.css";
   @import "./buttons.css";
