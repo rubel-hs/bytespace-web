@@ -1,8 +1,8 @@
+import HeroParallaxShapes from "@/components/HeroParallaxShapes";
 import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
-
 
 type HeroSectionData = {
   title: string;
@@ -16,7 +16,6 @@ type HeroSectionData = {
 };
 
 const HeroSection = ({ data }: { data: HeroSectionData }) => {
-
   return (
     <section
       className="section bg-secondary/90 pt-40 xl:pt-42 pb-0 relative overflow-hidden isolate"
@@ -65,73 +64,49 @@ const HeroSection = ({ data }: { data: HeroSectionData }) => {
           </div>
           {data.image && (
             <div className="col-12">
-              <ImageFallback
-                src={data.image}
-                className="mx-auto translate-x-12"
-                width="800"
-                height="420"
-                alt="data image"
-                priority
-              />
+              <div className="relative mx-auto w-[800px] max-w-full translate-x-12">
+                <ImageFallback
+                  src={data.image}
+                  className="h-auto w-full"
+                  width="800"
+                  height="420"
+                  alt="data image"
+                  priority
+                />
+                <Image
+                  src="/images/ui-ux-design.png"
+                  alt="UI/UX Design: 200 courses and 1000+ students"
+                  width={296}
+                  height={105}
+                  loading="eager"
+                  className="absolute left-0 top-[18%] z-20 hidden h-auto w-[26%] drop-shadow-md md:block"
+                  sizes="208px"
+                />
+                <Image
+                  src="/images/happy-students.png"
+                  alt="Happy students: 4.5 rating from 240 reviews and over 2000 students"
+                  width={387}
+                  height={182}
+                  loading="eager"
+                  className="absolute left-[-10%] top-[57%] z-20 hidden h-auto w-[34%] drop-shadow-md md:block"
+                  sizes="272px"
+                />
+                <Image
+                  src="/images/leading_progress.png"
+                  alt="Learning progress: 55%"
+                  width={348}
+                  height={197}
+                  loading="eager"
+                  className="absolute left-[70%] top-[20%] z-20 hidden h-auto w-[31%] drop-shadow-md md:block"
+                  sizes="248px"
+                />
+              </div>
             </div>
           )}
         </div>
       </div>
 
-      {/* Shapes */}
-      <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-        <Image
-          src="/images/shape/shape_spring_teal.svg"
-          alt=""
-          width={267}
-          height={387}
-          loading="eager"
-          className="shape-reveal shape-reveal--1 absolute left-[-4rem] lg:top-[20.5%] top-[36%] hidden w-56 md:block lg:left-[-7vw] lg:w-[clamp(310px,27vw,460px)]"
-          sizes="(min-width: 1024px) 27vw, 224px"
-        />
-        <Image
-          src="/images/shape/shape_teal_large.svg"
-          alt=""
-          width={213}
-          height={372}
-          className="shape-reveal shape-reveal--2 absolute right-[-5rem] lg:top-[19.5%] top-[36%] hidden w-48 md:block lg:right-[-6vw] lg:w-[clamp(224px,20vw,340px)]"
-          sizes="(min-width: 1024px) 20vw, 192px"
-        />
-        <Image
-          src="/images/shape/shape_spring_white_sm.svg"
-          alt=""
-          width={176}
-          height={176}
-          className="shape-reveal shape-reveal--3 absolute left-[15%] lg:top-[39%] top-[54%] hidden w-24 md:block lg:w-[clamp(128px,12vw,220px)]"
-          sizes="(min-width: 1024px) 12vw, 96px"
-        />
-        <Image
-          src="/images/shape/shape_cone.svg"
-          alt=""
-          width={190}
-          height={189}
-          className="shape-reveal shape-reveal--4 absolute right-[9%] lg:top-[39%] top-[54%] hidden w-28 md:block lg:right-[12%] lg:w-[clamp(176px,16vw,240px)]"
-          sizes="(min-width: 1024px) 16vw, 80px"
-        />
-        <Image
-          src="/images/shape/shape_dounut.svg"
-          alt=""
-          width={346}
-          height={343}
-          className="shape-reveal shape-reveal--5 absolute z-10 left-36 lg:left-46 top-[60%] lg:top-[55%] hidden w-56 md:block lg:w-[clamp(320px,30vw,480px)]"
-          sizes="(min-width: 1024px) 30vw, 224px"
-        />
-        <Image
-          src="/images/shape/shapte_spring_white_large.svg"
-          alt=""
-          width={317}
-          height={332}
-          className="shape-reveal shape-reveal--6 absolute right-[12%] bottom-[6%] hidden w-56 md:block lg:w-[clamp(280px,30vw,360px)]"
-          sizes="(min-width: 1024px) 30vw, 224px"
-        />
-        {/* large circle */}
-        <div className="shape-reveal shape-reveal--7 bg-primary w-1/2 max-w-287 aspect-square rounded-full absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"></div>
-      </div>
+      <HeroParallaxShapes />
     </section>
   );
 };

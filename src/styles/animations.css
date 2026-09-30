@@ -1,52 +1,89 @@
 @keyframes hero-shape-reveal {
-	from {
-		opacity: 0;
-		filter: blur(10px);
-	}
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
 
-	to {
-		opacity: 1;
-		filter: blur(0);
-	}
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
 .shape-reveal {
-	opacity: 0;
-	animation: hero-shape-reveal 900ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  opacity: 0;
+  animation: hero-shape-reveal 900ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 
 .shape-reveal--1 {
-	animation-delay: 100ms;
+  animation-delay: 100ms;
 }
 
 .shape-reveal--2 {
-	animation-delay: 200ms;
+  animation-delay: 200ms;
 }
 
 .shape-reveal--3 {
-	animation-delay: 300ms;
+  animation-delay: 300ms;
 }
 
 .shape-reveal--4 {
-	animation-delay: 400ms;
+  animation-delay: 400ms;
 }
 
 .shape-reveal--5 {
-	animation-delay: 500ms;
+  animation-delay: 500ms;
 }
 
 .shape-reveal--6 {
-	animation-delay: 600ms;
+  animation-delay: 600ms;
 }
 
 .shape-reveal--7 {
-	animation-delay: 700ms;
+  animation-delay: 700ms;
+}
+
+.hero-parallax-side,
+.hero-parallax-center {
+  transform-origin: center;
+  transition:
+    scale 80ms linear,
+    translate 80ms linear;
+}
+
+.hero-parallax-side {
+  scale: var(--hero-side-scale, 1);
+  translate: var(--hero-shape-x, 0) var(--hero-side-y, 0);
+}
+
+.hero-parallax-side--left {
+  --hero-shape-x: var(--hero-left-x, 0);
+}
+
+.hero-parallax-side--right {
+  --hero-shape-x: var(--hero-right-x, 0);
+}
+
+.hero-parallax-center {
+  scale: var(--hero-center-scale, 1);
+}
+
+[data-parallax-active="true"] .hero-parallax-side,
+[data-parallax-active="true"] .hero-parallax-center {
+  will-change: scale, translate;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.shape-reveal {
-		opacity: 1;
-		animation: none;
-		filter: none;
-	}
+  .shape-reveal {
+    opacity: 1;
+    animation: none;
+    filter: none;
+  }
+
+  .hero-parallax-side,
+  .hero-parallax-center {
+    scale: 1;
+    translate: none;
+    transition: none;
+  }
 }

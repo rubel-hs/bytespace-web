@@ -103,9 +103,12 @@ const Header = () => {
               <li key={url}>
                 <Link
                   href={url}
+                  aria-current={
+                    isCurrentRoute(pathname, url) ? "page" : undefined
+                  }
                   className={`block text-base leading-6 transition-colors hover:text-[#d4fb20] ${
                     isCurrentRoute(pathname, url)
-                      ? "font-medium text-[#f5f5f6]"
+                      ? "font-bold text-[#f5f5f6]"
                       : "font-normal text-[#f5f5f6]"
                   }`}
                 >
@@ -120,7 +123,12 @@ const Header = () => {
               <li key={url}>
                 <Link
                   href={url}
-                  className="text-base leading-6 transition-colors hover:text-[#d4fb20]"
+                  aria-current={
+                    isCurrentRoute(pathname, url) ? "page" : undefined
+                  }
+                  className={`text-base leading-6 transition-colors hover:text-[#d4fb20] ${
+                    isCurrentRoute(pathname, url) ? "font-bold" : "font-normal"
+                  }`}
                 >
                   {name}
                 </Link>
