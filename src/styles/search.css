@@ -1,29 +1,29 @@
 .search-modal {
-  @apply z-50 fixed top-0 left-0 w-full h-full flex items-start justify-center invisible opacity-0;
+  @apply invisible fixed inset-0 z-50 flex items-start justify-center opacity-0 transition duration-200;
 }
 .search-modal.show {
   @apply visible opacity-100;
 }
 .search-modal-overlay {
-  @apply fixed top-0 left-0 w-full h-full bg-black opacity-50;
+  @apply fixed inset-0 bg-dark/70 backdrop-blur-sm;
 }
 .search-wrapper {
-  @apply bg-white  w-[660px] max-w-[96%] mt-24 rounded shadow-lg relative z-10;
+  @apply relative z-10 mt-[8vh] w-[720px] max-w-[calc(100%-24px)] overflow-hidden rounded-[24px] border border-border bg-body shadow-2xl;
 }
 .search-wrapper-header {
-  @apply p-4 relative;
+  @apply relative p-4 md:p-5;
 }
 .search-wrapper-header-input {
-  @apply border border-solid w-full focus:ring-0 focus:border-dark border-border rounded-[4px] h-12 pr-4 pl-10 transition duration-200 outline-none;
+  @apply h-14 w-full rounded-[16px] border border-solid border-border bg-light pl-11 pr-4 text-base text-text-dark outline-none transition duration-200 placeholder:text-text-light focus:border-secondary focus:ring-2 focus:ring-secondary/10;
 }
 .search-wrapper-body {
-  @apply max-h-[calc(100vh-350px)] overflow-y-auto bg-light shadow-[inset_0_2px_18px_#ddd] p-4 rounded;
+  @apply max-h-[min(64vh,620px)] overflow-y-auto border-y border-border bg-light p-3 md:p-5;
 }
 .search-wrapper-footer {
-  @apply text-xs select-none leading-none md:flex items-center px-3.5 py-2 hidden;
+  @apply hidden select-none items-center px-5 py-3 text-xs leading-none text-text-light md:flex;
 }
 .search-wrapper-footer kbd {
-  @apply bg-light  text-xs leading-none text-center mr-[3px] px-1 py-0.5 rounded-[3px];
+  @apply mr-[3px] rounded-[5px] border border-border bg-light px-1.5 py-1 text-center text-[10px] font-semibold leading-none text-text-dark;
 }
 .search-wrapper-footer span:not(:last-child) {
   @apply mr-4;
@@ -32,40 +32,52 @@
   @apply ml-auto;
 }
 .search-result-empty {
-  @apply text-center cursor-text select-none px-0 py-8;
+  @apply cursor-text select-none px-0 py-12 text-center text-text-light;
 }
 .search-result-group {
-  @apply mb-4;
+  @apply mb-5 last:mb-0;
 }
 .search-result-group-title {
-  @apply text-lg text-text-dark  mb-[5px] px-3;
+  @apply mb-2 px-2 text-xs font-semibold uppercase tracking-[0.14em] text-text-light;
 }
 .search-result-item {
-  @apply rounded border bg-white   flex items-start mb-1 p-4 scroll-my-[30px] border-solid border-border relative;
+  @apply relative mb-2 flex scroll-my-[30px] items-stretch overflow-hidden rounded-[16px] border border-solid border-border bg-body last:mb-0;
 }
 .search-result-item mark {
-  @apply bg-yellow-200 rounded-[2px];
+  @apply rounded-[3px] bg-primary px-0.5 text-text-dark;
 }
 .search-result-item-title {
-  @apply text-lg font-bold text-text-dark  leading-none;
+  @apply font-secondary text-base font-medium leading-snug text-text-dark md:text-lg;
 }
 .search-result-item-link::after {
   @apply absolute top-0 right-0 bottom-0 left-0 z-10 content-[""];
 }
 .search-result-item-image {
-  @apply shrink-0 mr-3.5;
+  @apply w-[104px] shrink-0 md:w-[120px];
 }
 .search-result-item-image img {
-  @apply w-[60px] h-[60px] md:w-[100px] md:h-[100px] rounded-[4px] object-cover;
+  @apply h-full w-full object-cover;
+}
+.search-result-item-body {
+  @apply min-w-0 flex-1 p-3 md:px-4;
+}
+.search-result-item-author {
+  @apply mt-1.5 flex items-center gap-2 text-xs text-text-light;
+}
+.search-result-item-author img {
+  @apply size-6 rounded-full border border-border object-cover;
+}
+.search-result-item-level {
+  @apply ml-1 rounded-full bg-light px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-text;
 }
 .search-result-item-description {
-  @apply text-sm line-clamp-1 mt-1;
+  @apply mt-1 line-clamp-1 text-sm text-text;
 }
 .search-result-item-content {
-  @apply mx-0 my-1.5 empty:hidden line-clamp-1;
+  @apply mx-0 my-1 line-clamp-1 text-xs text-text-light empty:hidden;
 }
 .search-result-item-taxonomies {
-  @apply text-sm flex flex-wrap items-center text-text-light;
+  @apply mt-1 flex flex-wrap items-center text-xs text-text-light;
 }
 .search-result-item-taxonomies svg {
   @apply inline-block mr-1;
@@ -73,7 +85,7 @@
 .search-result-item-active,
 .search-result-item:focus,
 .search-result-item:hover {
-  @apply bg-dark;
+  @apply border-secondary bg-secondary;
 }
 .search-result-item-active .search-result-item-title,
 .search-result-item:focus .search-result-item-title,
@@ -94,4 +106,14 @@
 .search-result-item:focus .search-result-item-taxonomies,
 .search-result-item:hover .search-result-item-taxonomies {
   @apply text-white/90;
+}
+.search-result-item-active .search-result-item-author,
+.search-result-item:focus .search-result-item-author,
+.search-result-item:hover .search-result-item-author {
+  @apply text-white/80;
+}
+.search-result-item-active .search-result-item-level,
+.search-result-item:focus .search-result-item-level,
+.search-result-item:hover .search-result-item-level {
+  @apply bg-white/15 text-white;
 }

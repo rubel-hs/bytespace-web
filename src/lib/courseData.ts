@@ -52,7 +52,7 @@ export const getCoursesByCategory = (categorySlug: string) =>
 
 export type CourseFilters = {
   q?: string;
-  scope?: "courses" | "all";
+  scope?: "courses" | "creators";
   level?: string;
   category?: string;
   sort?: string;
@@ -72,10 +72,8 @@ export const filterCourses = (courses: Course[], filters: CourseFilters) => {
       .join(" ")
       .toLowerCase();
     const searchableText =
-      filters.scope === "all"
-        ? `${courseText} ${creator?.frontmatter.title ?? ""}`
-            .trim()
-            .toLowerCase()
+      filters.scope === "creators"
+        ? (creator?.frontmatter.title ?? "").toLowerCase()
         : courseText;
 
     return (

@@ -38,8 +38,13 @@ const getData = (folder, groupDepth) => {
         frontmatter: {
           title: data.title || "",
           description: data.description || "",
+          image: data.image || "",
           categories: data.categories || [],
           tags: data.tags || [],
+          category: data.category || "",
+          level: data.level || "",
+          course_creator: data.course_creator || "",
+          designation: data.designation || "",
         },
         content: content,
       };

@@ -68,7 +68,9 @@ const CourseArchive = ({
               />
             </label>
             <CourseSearchSubmit
-              defaultScope={filters.scope === "all" ? "all" : "courses"}
+              defaultScope={
+                filters.scope === "creators" ? "creators" : "courses"
+              }
             />
           </form>
         </div>
