@@ -1,0 +1,56 @@
+{
+  "site": {
+    "title": "Bytespace",
+    "base_url": "https://bytespace.dev",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "171",
+    "logo_height": "37",
+    "logo_text": "Bytespace"
+  },
+
+  "settings": {
+    "search": true,
+    "searchable_folders": ["blog", "authors"],
+    "sticky_header": true,
+    "pagination": 2,
+    "summary_length": 200,
+    "blog_folder": "blog"
+  },
+
+  "announcement": {
+    "enable": true,
+    "content": "<span class='text-center block'>Welcome to Bytespace</span>",
+    "expire_days": 7
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": "Designed and developed by Bytespace"
+  },
+
+  "navigation_button": {
+    "enable": false,
+    "label": "",
+    "link": "#"
+  },
+
+  "google_tag_manager": {
+    "enable": false,
+    "gtm_id": "GTM-XXXXXX"
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "",
+    "settings": {}
+  },
+
+  "metadata": {
+    "meta_author": "Bytespace",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Bytespace"
+  }
+}

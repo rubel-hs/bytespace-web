@@ -1,0 +1,39 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Courses",
+      "url": "/courses"
+    },
+    {
+      "name": "Creators",
+      "url": "/creators"
+    }
+  ],
+  "utility": [
+    {
+      "name": "Sign In",
+      "url": "/sign-in"
+    },
+    {
+      "name": "Join Us",
+      "url": "/join-us"
+    }
+  ],
+  "cart": {
+    "url": "/cart"
+  },
+  "footer": [
+    {
+      "name": "Elements",
+      "url": "/elements"
+    },
+    {
+      "name": "Privacy Policy",
+      "url": "/privacy-policy"
+    }
+  ]
+}
