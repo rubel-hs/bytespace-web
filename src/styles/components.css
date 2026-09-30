@@ -4,7 +4,7 @@
 }
 
 .section-box {
-  @apply py-16 xl:py-38 my-10 xl:my-19 relative bg-light rounded-[36px] lg:rounded-[80px];
+  @apply py-16 xl:py-38 relative;
 }
 
 .section-ph {

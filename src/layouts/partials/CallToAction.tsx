@@ -13,7 +13,7 @@ const CallToAction = ({ data }: { data: PageData }) => {
   return (
     <>
       {data.frontmatter.enable && (
-        <section className="relative mb-28 min-h-[488px] overflow-hidden bg-secondary text-body">
+        <section className="relative min-h-[488px] overflow-hidden bg-secondary text-body">
           <div
             aria-hidden="true"
             className="absolute inset-0 text-body opacity-12"

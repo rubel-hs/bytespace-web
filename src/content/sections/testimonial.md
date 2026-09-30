@@ -1,27 +1,36 @@
 ---
 enable: true
-title: "What Users Are Saying About Bytespace"
-description: "Hear from people using Bytespace."
+title: "Discover What Our Community Is Saying"
+description: "At ByteSpace, our vibrant community of learners and creators is at the heart of what we do. Hear directly from those who have experienced the transformative journey of learning and creating on our platform. Explore testimonials that reflect the diverse perspectives of enthusiastic learners and accomplished creators."
 
 # Testimonials
 testimonials:
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+  - name: "Sarah M."
+    designation: "Enthusiastic Learner"
+    avatar: "/images/testimonial/testimonial-sarah.png"
+    content: '"ByteSpace has transformed my approach to learning. The diverse range of courses and the quality of content provided by creators have exceeded my expectations. The platform truly fosters a sense of community and lifelong learning."'
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+  - name: "James L."
+    designation: "Lifelong Learner"
+    avatar: "/images/testimonial/testimonial-james.png"
+    content: '"I''ve tried several online learning platforms, and ByteSpace stands out for its vibrant community and the variety of courses available. The easy navigation and engaging content make it a go-to platform for continuous skill development."'
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+  - name: "Alex B."
+    designation: "Inspired Creator"
+    avatar: "/images/testimonial/testimonial-alex.png"
+    content: '"As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It''s fulfilling to see my courses making a positive impact on learners globally."'
+  - name: "Sarah M."
+    designation: "Enthusiastic Learner"
+    avatar: "/images/testimonial/testimonial-sarah.png"
+    content: '"ByteSpace has transformed my approach to learning. The diverse range of courses and the quality of content provided by creators have exceeded my expectations. The platform truly fosters a sense of community and lifelong learning."'
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+  - name: "James L."
+    designation: "Lifelong Learner"
+    avatar: "/images/testimonial/testimonial-james.png"
+    content: '"I''ve tried several online learning platforms, and ByteSpace stands out for its vibrant community and the variety of courses available. The easy navigation and engaging content make it a go-to platform for continuous skill development."'
+
+  - name: "Alex B."
+    designation: "Inspired Creator"
+    avatar: "/images/testimonial/testimonial-alex.png"
+    content: '"As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It''s fulfilling to see my courses making a positive impact on learners globally."'
 ---
