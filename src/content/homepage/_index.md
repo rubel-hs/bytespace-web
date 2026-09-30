@@ -9,45 +9,60 @@ banner:
     placeholder: "Course, topic, creator"
     button_label: "Search"
 
+trusted_brands:
+  enable: true
+  images:
+    - src: "/images/brands/Frame.png"
+      alt: "Logoipsum"
+    - src: "/images/brands/Frame-1.png"
+      alt: "Logoipsum"
+    - src: "/images/brands/Frame-2.png"
+      alt: "Logoipsum"
+    - src: "/images/brands/Frame-3.png"
+      alt: "Logoipsum"
+    - src: "/images/brands/Frame-4.png"
+      alt: "Logoipsum"
+
+latest_courses:
+  title: Discover Your Passion, Build Your Skills
+  content: At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life.
+
+explore_diverse_learning_paths:
+  title: Explore Diverse Learning Paths at Bytespace
+  content: At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there's something for everyone. Unleash your potential and explore our carefully curated categories.
+  list:
+    - title: Design
+      svg_source: /images/icons/Design.svg
+    - title: Development
+      svg_source: /images/icons/Development.svg
+    - title: IT & Software
+      svg_source: /images/icons/IT & Software.svg
+    - title: Business
+      svg_source: /images/icons/Business.svg
+    - title: Marketing
+      svg_source: /images/icons/Marketing.svg
+    - title: Photography
+      svg_source: /images/icons/Photography.svg
+
 # Features
 features:
-  - title: "What's Included in Bytespace"
+  - title: "Your Path to Professional Growth Starts Here!"
+    content: "Explore our curated selection of courses tailored to enhance your capabilities and accelerate your career journey. Whether you are looking to sharpen specific skills, gain industry expertise, or embark on a new career path entirely, we have the resources you need."
     image: "/images/service-1.png"
-    content: "Bytespace includes the essentials for building a polished, content-focused web experience."
-    bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Next and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
-    button:
-      enable: false
-      label: "Get Started Now"
-      link: "#"
+    stats:
+      - value: "12K"
+        label: "Students"
+      - value: "70+"
+        label: "Courses"
+      - value: "16"
+        label: "Creators"
 
-  - title: "Discover the Key Features Of Next"
+  - title: "Create & Manage Courses Easily."
+    content: "**ByteSpace** supports individuals or entities in the creation, publication, and administration of educational courses."
     image: "/images/service-2.png"
-    content: "Next is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
-    bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
-    button:
-      enable: true
-      label: "Get Started Now"
-      link: "#"
-
-  - title: "The Top Reasons to Choose Next for Your Next Project"
-    image: "/images/service-3.png"
-    content: "With Next, you can build modern and content-focused websites without sacrificing performance or ease of use."
-    bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Next a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
-    button:
-      enable: false
-      label: ""
-      link: ""
+    bullet_points:
+      - "Share Your Expertise"
+      - "Monetize Your Passion"
+      - "Flexibility and Autonomy"
+      - "Build a Community"
 ---

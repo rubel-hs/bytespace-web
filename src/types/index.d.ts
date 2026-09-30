@@ -62,9 +62,13 @@ export type Author = {
 };
 
 export type Feature = {
-  button: button;
+  button?: button;
   image: string;
-  bulletpoints: string[];
+  bullet_points?: string[];
+  stats?: Array<{
+    value: string;
+    label: string;
+  }>;
   content: string;
   title: string;
 };
@@ -80,7 +84,12 @@ export type Call_to_action = {
   enable?: boolean;
   title: string;
   description: string;
-  image: string;
+  images: Array<{
+    src: string;
+    width: number;
+    height: number;
+    className: string;
+  }>;
   button: Button;
 };
 

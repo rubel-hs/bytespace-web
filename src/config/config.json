@@ -28,7 +28,14 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed and developed by Bytespace"
+    "copyright": "© 2023 ByteSpace. All rights reserved.",
+    "footer_newsletter": {
+      "description": "Stay up to date with our latest features and releases by joining our newsletter.",
+      "placeholder": "Enter your email",
+      "button_label": "Subscribe",
+      "disclaimer": "By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.",
+      "action": "#"
+    }
   },
 
   "navigation_button": {

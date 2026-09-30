@@ -28,12 +28,39 @@
   },
   "footer": [
     {
-      "name": "Elements",
-      "url": "/elements"
+      "title": "Browse",
+      "links": [
+        { "name": "Featured Courses", "url": "/courses" },
+        { "name": "Featured Categories", "url": "/categories" },
+        { "name": "Business", "url": "/categories/business" },
+        { "name": "IT", "url": "/categories/it" },
+        { "name": "Design", "url": "/categories/design" }
+      ]
     },
     {
-      "name": "Privacy Policy",
-      "url": "/privacy-policy"
+      "title": "",
+      "links": [
+        { "name": "Development", "url": "/categories/development" },
+        { "name": "Marketing", "url": "/categories/marketing" },
+        { "name": "Photography", "url": "/categories/photography" },
+        { "name": "Finance", "url": "/categories/finance" },
+        { "name": "Sport", "url": "/categories/sport" }
+      ]
+    },
+    {
+      "title": "Platform",
+      "links": [
+        { "name": "Become a Creator", "url": "/join-us" },
+        { "name": "Affiliate Program", "url": "/affiliate-program" },
+        { "name": "Contact", "url": "/contact" },
+        { "name": "Help", "url": "/help" },
+        { "name": "About", "url": "/about" }
+      ]
     }
+  ],
+  "footer_legal": [
+    { "name": "Privacy Policy", "url": "/privacy-policy" },
+    { "name": "Terms of Service", "url": "/terms-of-service" },
+    { "name": "Cookies Settings", "url": "/cookies-settings" }
   ]
 }

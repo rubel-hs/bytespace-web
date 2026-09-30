@@ -12,7 +12,8 @@
       "text_color": {
         "text": "#4B4C53",
         "text_dark": "#040819",
-        "text_light": "#82868E"
+        "text_light": "#82868E",
+        "footer_text": "#242528"
       }
     }
   },
