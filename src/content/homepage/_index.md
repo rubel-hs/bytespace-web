@@ -9,6 +9,29 @@ banner:
     placeholder: "Course, topic, creator"
     button_label: "Search"
 
+trusted_brands:
+  enable: true
+  images:
+    - src: "/images/brands/Frame.png"
+      alt: "Logoipsum"
+    - src: "/images/brands/Frame-1.png"
+      alt: "Logoipsum"
+    - src: "/images/brands/Frame-2.png"
+      alt: "Logoipsum"
+    - src: "/images/brands/Frame-3.png"
+      alt: "Logoipsum"
+    - src: "/images/brands/Frame-4.png"
+      alt: "Logoipsum"
+
+latest_courses:
+  title: Discover Your Passion, Build Your Skills
+  content: At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life.
+
+diverse_learning_paths:
+  title: Explore Diverse Learning Paths at Bytespace
+  content: At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there's something for everyone. Unleash your potential and explore our carefully curated categories.
+
+
 # Features
 features:
   - title: "What's Included in Bytespace"

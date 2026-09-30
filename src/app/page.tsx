@@ -5,6 +5,7 @@ import CallToAction from "@/partials/CallToAction";
 import HeroSection from "@/partials/HeroSection";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
+import TrustedBrands from "@/partials/TrustedBrands";
 import { Feature } from "@/types";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
@@ -17,6 +18,7 @@ const Home = () => {
   const {
     banner,
     features,
+    trusted_brands,
   }: {
     banner: {
       title: string;
@@ -28,6 +30,14 @@ const Home = () => {
         button_label?: string;
       };
     };
+    trusted_brands: {
+      enable?: boolean;
+      title: string;
+      images: Array<{
+        src: string;
+        alt: string;
+      }>;
+    };
     features: Feature[];
   } = frontmatter;
 
@@ -35,7 +45,7 @@ const Home = () => {
     <>
       <SeoMeta />
       <HeroSection data={banner} />
-      
+      <TrustedBrands data={trusted_brands} />
 
       {features.map((feature, index: number) => (
         <section
