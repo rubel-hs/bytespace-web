@@ -1,6 +1,6 @@
+import CallToActionParallaxShapes from "@/components/CallToActionParallaxShapes";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Call_to_action } from "@/types";
-import Image from "next/image";
 import Link from "next/link";
 
 interface PageData {
@@ -24,17 +24,7 @@ const CallToAction = ({ data }: { data: PageData }) => {
             }}
           />
 
-          {data.frontmatter.images.map((shape) => (
-            <Image
-              key={shape.src}
-              aria-hidden="true"
-              className={`pointer-events-none absolute block select-none scale-[0.4] md:scale-[0.6] xl:scale-[1] ${shape.className}`}
-              src={shape.src}
-              width={shape.width}
-              height={shape.height}
-              alt=""
-            />
-          ))}
+          <CallToActionParallaxShapes shapes={data.frontmatter.images} />
 
           <div className="container relative flex min-h-122 items-center justify-center py-16">
             <div className="mx-auto flex w-full max-w-241 flex-col items-center gap-10 text-center">

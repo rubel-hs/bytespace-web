@@ -78,7 +78,7 @@ const HeroParallaxShapes = () => {
       aria-hidden="true"
     >
       <Image
-        src="/images/shape/shape_spring_teal.svg"
+        src="/images/shape/shape_spring_teal.png"
         alt=""
         width={267}
         height={387}
@@ -87,7 +87,7 @@ const HeroParallaxShapes = () => {
         sizes="(min-width: 1024px) 27vw, 224px"
       />
       <Image
-        src="/images/shape/shape_teal_large.svg"
+        src="/images/shape/shape_teal_large.png"
         alt=""
         width={213}
         height={372}
@@ -95,7 +95,7 @@ const HeroParallaxShapes = () => {
         sizes="(min-width: 1024px) 20vw, 192px"
       />
       <Image
-        src="/images/shape/shape_spring_white_sm.svg"
+        src="/images/shape/shape_spring_white_sm.png"
         alt=""
         width={176}
         height={176}
@@ -103,7 +103,7 @@ const HeroParallaxShapes = () => {
         sizes="(min-width: 1024px) 12vw, 96px"
       />
       <Image
-        src="/images/shape/shape_cone.svg"
+        src="/images/shape/shape_cone.png"
         alt=""
         width={190}
         height={189}
@@ -111,7 +111,7 @@ const HeroParallaxShapes = () => {
         sizes="(min-width: 1024px) 16vw, 80px"
       />
       <Image
-        src="/images/shape/shape_dounut.svg"
+        src="/images/shape/shape_dounut.png"
         alt=""
         width={346}
         height={343}
@@ -119,7 +119,7 @@ const HeroParallaxShapes = () => {
         sizes="(min-width: 1024px) 30vw, 224px"
       />
       <Image
-        src="/images/shape/shapte_spring_white_large.svg"
+        src="/images/shape/shapte_spring_white_large.png"
         alt=""
         width={317}
         height={332}
