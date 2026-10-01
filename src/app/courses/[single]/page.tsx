@@ -1,4 +1,4 @@
-import ImageFallback from "@/helpers/ImageFallback";
+import CourseVideo from "@/components/CourseVideo";
 import MDXContent from "@/helpers/MDXContent";
 import CourseReviews from "@/components/CourseReviews";
 import {
@@ -13,7 +13,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import {
   FaChartSimple,
-  FaPlay,
   FaShareNodes,
   FaStar,
   FaUsers,
@@ -105,23 +104,8 @@ const CourseSingle = async ({
           </div>
 
           <div className="relative mt-14 pb-4">
-            <div className="relative overflow-hidden rounded-[28px] bg-light lg:w-[calc(66.666%-1.25rem)]">
-              <ImageFallback
-                src={image || "/images/image-placeholder.png"}
-                fallback="/images/image-placeholder.png"
-                width={1024}
-                height={586}
-                sizes="(max-width: 1023px) 100vw, 66vw"
-                alt={title}
-                className="aspect-512/293 w-full object-cover"
-              />
-
-              {/* Play button */}
-              <span className="absolute left-1/2 top-1/2 flex size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[20px] border border-dark/25 bg-course-play/80 cursor-pointer shadow-lg backdrop-blur-sm">
-                <span className="flex size-12 items-center justify-center rounded-full bg-body/95 text-course-play">
-                  <FaPlay aria-hidden="true" className="ml-1 text-[22px]" />
-                </span>
-              </span>
+            <div className="lg:w-[calc(66.666%-1.25rem)]">
+              <CourseVideo title={title} />
             </div>
             <div className="mt-8 lg:absolute lg:right-0 lg:top-0 lg:z-10 lg:mt-0 lg:w-[calc(33.333%-1.25rem)]">
               <CourseSidebar course={course} creator={creator} />
