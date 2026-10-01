@@ -63,7 +63,7 @@ const Header = () => {
     >
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-0 z-0 bg-secondary/90 shadow-lg backdrop-blur-md transition-transform duration-300 ease-out transform-gpu will-change-transform backface-hidden transform-[translateZ(0)] ${
+        className={`pointer-events-none absolute inset-0 z-0 bg-secondary/80 shadow-lg backdrop-blur-md transition-transform duration-300 ease-out transform-gpu will-change-transform backface-hidden transform-[translateZ(0)] ${
           hasScrolled ? "translate-y-0" : "-translate-y-full"
         }`}
       />

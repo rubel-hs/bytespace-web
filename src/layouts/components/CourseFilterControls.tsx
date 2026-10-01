@@ -67,7 +67,7 @@ const FilterDropdown = ({
   return (
     <div
       ref={dropdownRef}
-      className={`relative w-fit max-w-full shrink-0 ${isOpen ? "z-[130]" : "z-[110]"}`}
+      className={`relative w-fit max-w-full shrink-0 ${isOpen ? "z-20" : "z-10"}`}
     >
       <input type="hidden" name={name} value={value} />
       <button
@@ -87,7 +87,7 @@ const FilterDropdown = ({
       </button>
 
       <div
-        className={`absolute top-full z-[140] w-max max-w-[calc(100vw-2rem)] min-w-48 pt-2 ${isOpen ? "block" : "hidden"} ${
+        className={`absolute top-full z-30 w-max max-w-[calc(100vw-2rem)] min-w-48 pt-2 ${isOpen ? "block" : "hidden"} ${
           align === "right" ? "left-0 lg:left-auto lg:right-0" : "left-0"
         }`}
       >
@@ -174,7 +174,7 @@ const CourseFilterControls = ({
     <form
       ref={formRef}
       action="/courses"
-      className="relative z-[100] mb-7 flex flex-col gap-4 overflow-visible lg:flex-row lg:items-center lg:justify-between"
+      className="relative z-20 mb-7 flex flex-col gap-4 overflow-visible lg:flex-row lg:items-center lg:justify-between"
     >
       {q && <input type="hidden" name="q" value={q} />}
       {scope && <input type="hidden" name="scope" value={scope} />}

@@ -4,6 +4,7 @@ import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Testimonial } from "@/types";
 import "swiper/css";
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 interface PageData {
@@ -65,6 +66,16 @@ const Testimonials = ({ data }: { data: PageData }) => {
 
         <Swiper
           className="mt-12 overflow-visible! lg:mt-18"
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          centeredSlides
+          loop
+          loopAdditionalSlides={1}
+          speed={500}
           slidesPerView={1}
           spaceBetween={24}
           breakpoints={{
