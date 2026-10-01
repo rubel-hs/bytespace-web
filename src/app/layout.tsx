@@ -8,6 +8,7 @@ import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import "@/styles/main.css";
 import { GoogleTagManager } from "@next/third-parties/google";
+import "lenis/dist/lenis.css";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   // import google font css

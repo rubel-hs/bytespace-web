@@ -157,7 +157,14 @@ export type Call_to_action = {
     src: string;
     width: number;
     height: number;
-    className: string;
+    className?: string;
+    position: {
+      top?: string | number;
+      right?: string | number;
+      bottom?: string | number;
+      left?: string | number;
+      width?: string | number;
+    };
   }>;
   button: Button;
 };

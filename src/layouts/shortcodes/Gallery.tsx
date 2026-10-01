@@ -36,7 +36,7 @@ const Gallery = ({
                 ? "(max-width: 1023px) 50vw, 25vw"
                 : "(max-width: 639px) 100vw, 50vw"
             }
-            className="aspect-[4/3] h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+            className="aspect-4/3 h-full w-full object-cover transition-transform duration-300 hover:scale-105"
           />
         </div>
       ))}

@@ -35,7 +35,7 @@ const CategoryArchive = ({
               <Link
                 key={category}
                 href={`/categories/${category}`}
-                className="group rounded-[24px] border border-border p-7 transition duration-300 hover:border-secondary hover:card-shadow"
+                className="group rounded-3xl border border-border p-7 transition duration-300 hover:border-secondary hover:card-shadow"
               >
                 <span className="flex size-12 items-center justify-center rounded-2xl bg-primary text-text-dark">
                   <FaLayerGroup />

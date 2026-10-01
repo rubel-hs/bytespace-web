@@ -23,7 +23,7 @@ const CourseGrid = ({
         ))}
       </div>
     ) : (
-      <div className="rounded-[24px] border border-border bg-light px-6 py-16 text-center">
+      <div className="rounded-3xl border border-border bg-light px-6 py-16 text-center">
         <h2 className="h4">No courses yet</h2>
         <p className="mt-2">New learning experiences are on the way.</p>
       </div>

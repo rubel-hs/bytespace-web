@@ -58,18 +58,18 @@ const Header = () => {
     <header
       style={{ top: "var(--announcement-height, 0px)" }}
       className={`fixed inset-x-0 z-30 bg-transparent text-[#f5f5f6] transition-[top,height] duration-300 ease-out ${
-        hasScrolled ? "h-20" : "h-[80px] lg:h-[120px]"
+        hasScrolled ? "h-20" : "h-20 lg:h-30"
       }`}
     >
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-0 z-0 bg-[#242528]/90 shadow-lg backdrop-blur-md transition-transform duration-300 ease-out transform-gpu will-change-transform backface-hidden [transform:translateZ(0)] ${
+        className={`pointer-events-none absolute inset-0 z-0 bg-secondary/80 shadow-lg backdrop-blur-md transition-transform duration-300 ease-out transform-gpu will-change-transform backface-hidden transform-[translateZ(0)] ${
           hasScrolled ? "translate-y-0" : "-translate-y-full"
         }`}
       />
       <nav
         aria-label="Primary navigation"
-        className="relative z-10 mx-auto flex h-full max-w-[1196px] items-center px-6 xl:px-0"
+        className="relative z-10 mx-auto flex h-full max-w-299 items-center px-6 xl:px-0"
       >
         <Logo />
 
@@ -78,34 +78,37 @@ const Header = () => {
           aria-expanded={menuOpen}
           aria-controls="header-navigation"
           onClick={() => setMenuOpen((isOpen) => !isOpen)}
-          className="ml-auto inline-flex size-10 items-center justify-center lg:hidden"
+          className="btn-icon ml-auto size-10 lg:hidden"
         >
           <span className="sr-only">Toggle navigation</span>
           <span className="relative block h-4 w-6">
             <span
-              className={`absolute left-0 top-0 h-px w-6 bg-current transition ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`}
+              className={`absolute left-0 top-0 h-px w-6 bg-current transition ${menuOpen ? "translate-y-1.75 rotate-45" : ""}`}
             />
             <span
-              className={`absolute left-0 top-[7px] h-px w-6 bg-current transition ${menuOpen ? "opacity-0" : ""}`}
+              className={`absolute left-0 top-1.75 h-px w-6 bg-current transition ${menuOpen ? "opacity-0" : ""}`}
             />
             <span
-              className={`absolute left-0 top-[14px] h-px w-6 bg-current transition ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
+              className={`absolute left-0 top-3.5 h-px w-6 bg-current transition ${menuOpen ? "-translate-y-1.75 -rotate-45" : ""}`}
             />
           </span>
         </button>
 
         <div
           id="header-navigation"
-          className={`${menuOpen ? "flex" : "hidden"} absolute inset-x-0 ${hasScrolled ? "top-20" : "top-[80px]"} flex-col gap-8 bg-[#242528] px-6 py-8 shadow-lg lg:static lg:ml-auto lg:flex lg:flex-row lg:items-center lg:gap-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
+          className={`${menuOpen ? "flex" : "hidden"} absolute inset-x-0 ${hasScrolled ? "top-20" : "top-20"} flex-col gap-8 bg-footer-text px-6 py-8 shadow-lg lg:static lg:ml-auto lg:flex lg:flex-row lg:items-center lg:gap-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
         >
           <ul className="flex flex-col gap-5 lg:absolute lg:left-1/2 lg:flex-row lg:gap-6 lg:-translate-x-1/2">
             {primaryNavigation.map(({ name, url }) => (
               <li key={url}>
                 <Link
                   href={url}
+                  aria-current={
+                    isCurrentRoute(pathname, url) ? "page" : undefined
+                  }
                   className={`block text-base leading-6 transition-colors hover:text-[#d4fb20] ${
                     isCurrentRoute(pathname, url)
-                      ? "font-medium text-[#f5f5f6]"
+                      ? "font-bold text-[#f5f5f6]"
                       : "font-normal text-[#f5f5f6]"
                   }`}
                 >
@@ -120,7 +123,12 @@ const Header = () => {
               <li key={url}>
                 <Link
                   href={url}
-                  className="text-base leading-6 transition-colors hover:text-[#d4fb20]"
+                  aria-current={
+                    isCurrentRoute(pathname, url) ? "page" : undefined
+                  }
+                  className={`text-base leading-6 transition-colors hover:text-[#d4fb20] ${
+                    isCurrentRoute(pathname, url) ? "font-bold" : "font-normal"
+                  }`}
                 >
                   {name}
                 </Link>

@@ -115,7 +115,7 @@ const Announcement: React.FC = () => {
       <button
         type="button"
         onClick={handleClose}
-        className="absolute top-1/2 right-4 z-10 flex size-6 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-light/40 text-base leading-none text-light transition-colors duration-200 hover:bg-light/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light"
+        className="btn-icon btn-announcement-close absolute top-1/2 right-4 z-10 -translate-y-1/2"
         aria-label="Close announcement"
       >
         &times;

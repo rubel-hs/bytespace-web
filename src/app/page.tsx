@@ -91,14 +91,14 @@ const Home = () => {
               >
                 <div
                   aria-hidden="true"
-                  className={`absolute size-72 rounded-full blur-3xl md:size-[38rem] ${index % 2 === 0
+                  className={`absolute size-72 rounded-full blur-3xl md:size-152 ${index % 2 === 0
                       ? "left-20 -top-40 bg-primary/25"
                       : "-bottom-40 -left-32 bg-primary/30"
                     }`}
                 />
                 <div
                   aria-hidden="true"
-                  className={`absolute size-80 rounded-full bg-secondary/15 blur-3xl md:size-[38rem] ${index % 2 === 0 ? "-right-52 -top-20" : "-bottom-52 -right-40"
+                  className={`absolute size-80 rounded-full bg-secondary/15 blur-3xl md:size-152 ${index % 2 === 0 ? "-right-52 -top-20" : "-bottom-52 -right-40"
                     }`}
                 />
 
@@ -115,7 +115,7 @@ const Home = () => {
                           width={index % 2 === 0 ? 1055 : 880}
                           alt={feature.title}
                           sizes="(max-width: 767px) 100vw, 50vw"
-                          className={`mx-auto h-auto w-full object-contain ${index % 2 === 0 ? "max-w-[600px]" : "max-w-[500px]"
+                          className={`mx-auto h-auto w-full object-contain ${index % 2 === 0 ? "max-w-150" : "max-w-125"
                             }`}
                         />
                       </div>

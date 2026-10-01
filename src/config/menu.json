@@ -50,7 +50,7 @@
     {
       "title": "Platform",
       "links": [
-        { "name": "Become a Creator", "url": "/join-us" },
+        { "name": "Become a Creator", "url": "/sign-in" },
         { "name": "Affiliate Program", "url": "/affiliate-program" },
         { "name": "Contact", "url": "/contact" },
         { "name": "Help", "url": "/help" },

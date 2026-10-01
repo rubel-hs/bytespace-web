@@ -16,14 +16,14 @@ const NotFound = async () => {
                 alt="404"
                 width={920}
                 height={358}
-                className="mx-auto h-auto w-full max-w-[920px]"
+                className="mx-auto h-auto w-full max-w-230"
                 priority
               />
               <div className="-mt-16 md:-mt-28 flex flex-col items-center gap-8">
-                <h1 className="font-secondary font-semibold text-white text-4xl md:text-7xl leading-[1.2] tracking-[-0.01em] max-w-[935px]">
+                <h1 className="font-secondary font-semibold text-white text-4xl md:text-7xl leading-[1.2] tracking-[-0.01em] max-w-233.75">
                   The page you are looking for doesn&rsquo;t exist
                 </h1>
-                <p className="text-[#E5E6E8] text-lg leading-[1.6] max-w-[467px]">
+                <p className="text-[#E5E6E8] text-lg leading-[1.6] max-w-116.75">
                   Try to use a correct url or go back to homepage to start
                   again
                 </p>

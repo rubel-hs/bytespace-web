@@ -29,7 +29,7 @@ const CourseCard = ({ course }: { course: Course }) => {
   );
 
   return (
-    <article className="group flex h-full flex-col rounded-[24px] border border-border bg-body p-4 transition duration-300 hover:card-shadow">
+    <article className="group flex h-full flex-col rounded-3xl border border-border bg-body p-4 transition duration-300 hover:card-shadow">
       <Link
         href={`/courses/${slug}`}
         className="relative block overflow-hidden rounded-[18px] bg-light"
@@ -41,7 +41,7 @@ const CourseCard = ({ course }: { course: Course }) => {
           width={512}
           height={293}
           sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
-          className="aspect-[512/293] w-full object-cover"
+          className="aspect-512/293 w-full object-cover"
         />
         <div className="absolute inset-x-3 bottom-3 flex flex-wrap gap-2 text-[11px] text-text-dark">
           <span className="rounded-full bg-body/90 px-3 py-1.5 backdrop-blur-sm">

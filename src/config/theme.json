@@ -4,6 +4,7 @@
       "theme_color": {
         "primary": "#D4FB20",
         "secondary": "#003BE2",
+        "course_play": "#967669",
         "body": "#ffffff",
         "border": "#CED0D3",
         "light": "#F5F5F6",

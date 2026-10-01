@@ -85,7 +85,7 @@ const CourseReviews = ({
               aria-pressed={isSelected}
               aria-controls="course-review-list"
               onClick={() => setSelectedRating(filter)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary ${isSelected ? "bg-primary text-text-dark" : "bg-light text-text hover:bg-border"}`}
+              className={`btn-option ${isSelected ? "btn-option-active" : ""}`}
             >
               {filter !== "all" && <FaStar className="mr-1.5 inline" />}
               {filter === "all" ? "All ratings" : filter}

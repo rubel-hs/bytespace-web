@@ -9,18 +9,18 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-border bg-body text-footer-text">
-      <div className="container py-12 sm:py-14 lg:py-[70px]">
-        <div className="grid gap-14 lg:grid-cols-[minmax(0,528px)_1fr] lg:gap-[92px]">
+      <div className="container py-12 sm:py-14 lg:py-17.5">
+        <div className="grid gap-14 lg:grid-cols-[minmax(0,528px)_1fr] lg:gap-23">
           <div>
             <div className="space-y-4">
               <Logo src="/images/logo_dark.png" />
-              <p className="max-w-[528px] text-sm leading-[1.6]">
+              <p className="max-w-132 text-sm leading-[1.6]">
                 {newsletter.description}
               </p>
             </div>
 
             <form
-              className="mt-8 sm:mt-[45px]"
+              className="mt-8 sm:mt-11.25"
               action={newsletter.action}
               method="post"
             >
@@ -35,16 +35,16 @@ const Footer = () => {
                   autoComplete="email"
                   required
                   placeholder={newsletter.placeholder}
-                  className="h-[52px] w-full rounded-full border border-border bg-body px-6 text-base outline-none transition-colors placeholder:text-footer-text focus:border-text-dark sm:max-w-[376px]"
+                  className="h-13 w-full rounded-full border border-border bg-body px-6 text-base outline-none transition-colors placeholder:text-footer-text focus:border-text-dark sm:max-w-94"
                 />
                 <button
                   type="submit"
-                  className="h-[52px] shrink-0 rounded-full bg-primary px-6 text-lg font-medium leading-[1.2] text-footer-text transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-dark"
+                  className="btn btn-primary h-13 shrink-0 leading-[1.2]"
                 >
                   {newsletter.button_label}
                 </button>
               </div>
-              <p className="mt-6 max-w-[504px] text-xs leading-[1.6]">
+              <p className="mt-6 max-w-126 text-xs leading-[1.6]">
                 {newsletter.disclaimer}
               </p>
             </form>
@@ -81,7 +81,7 @@ const Footer = () => {
           </nav>
         </div>
 
-        <div className="mt-14 border-t border-border pt-[22px] lg:mt-[130px]">
+        <div className="mt-14 border-t border-border pt-5.5 lg:mt-32.5">
           <div className="flex flex-col gap-4 text-xs leading-[1.6] sm:flex-row sm:items-center sm:justify-between">
             <p dangerouslySetInnerHTML={markdownify(copyright)} />
             <ul className="flex flex-wrap gap-x-6 gap-y-2">

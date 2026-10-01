@@ -3,11 +3,11 @@ import { humanize } from "@/lib/utils/textConverter";
 
 const PageHeader = ({ title }: { title: string }) => {
   return (
-    <section>
+    <section className="section-ph">
       <div className="container text-center">
-        <div className="rounded-2xl bg-gradient-to-b from-body to-light px-8 py-14  ">
-          <h1>{humanize(title)}</h1>
-          <Breadcrumbs className="mt-6" />
+        <div className="text-white  ">
+          <h1 className="text-white font-bold">{humanize(title)}</h1>
+          <Breadcrumbs className="mt-6 text-white" />
         </div>
       </div>
     </section>

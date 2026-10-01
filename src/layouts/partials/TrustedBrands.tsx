@@ -104,7 +104,7 @@ const TrustedBrands = ({ data }: { data: TrustedBrandsData }) => {
                 src={brand.src}
                 alt={brand.alt}
                 draggable={false}
-                className="h-6 max-w-[150px] lg:h-8"
+                className="h-6 max-w-37.5 lg:h-8"
                 style={{
                   filter: isVisible ? "blur(0)" : "blur(10px)",
                   opacity: isVisible ? 1 : 0,
