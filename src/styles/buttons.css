@@ -1,9 +1,9 @@
 .btn {
-  @apply inline-block rounded-full border border-transparent px-6 py-2.5 font-semibold transition duration-300;
+  @apply inline-flex cursor-pointer items-center justify-center rounded-full border border-transparent px-6 py-2.5 font-semibold transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary;
 }
 
 .btn-sm {
-  @apply rounded-sm px-4 py-1.5 text-sm;
+  @apply cursor-pointer rounded-sm px-4 py-1.5 text-sm;
 }
 
 .btn-primary {
@@ -12,4 +12,52 @@
 
 .btn-outline-primary {
   @apply border-dark text-text-dark hover:bg-dark  bg-transparent hover:text-white;
+}
+
+.btn-icon {
+  @apply inline-flex cursor-pointer items-center justify-center transition duration-200;
+}
+
+.btn-announcement-close {
+  @apply size-6 rounded-full border border-light/40 text-base leading-none text-light hover:bg-light/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light;
+}
+
+.btn-filter {
+  @apply inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-full border border-border bg-body px-5 py-2.5 text-sm text-text-dark transition-colors hover:border-text-light focus-visible:outline-none focus-within:border-text-dark;
+}
+
+.btn-menu-item {
+  @apply block w-full cursor-pointer rounded-md bg-light px-3 py-2 text-left text-sm font-medium text-text-dark transition-colors hover:bg-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark;
+}
+
+.btn-menu-item-active {
+  @apply bg-dark text-white hover:bg-text-dark;
+}
+
+.btn-option {
+  @apply flex items-center cursor-pointer rounded-full bg-light px-4 py-2 text-sm font-medium text-text transition-colors hover:bg-border focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary;
+}
+
+.btn-option-lg {
+  @apply px-5 py-2.5;
+}
+
+.btn-option-active {
+  @apply bg-primary text-text-dark hover:bg-primary;
+}
+
+.btn-search-submit {
+  @apply min-w-28 grow cursor-pointer rounded-l-full px-6 text-center font-medium transition-colors hover:bg-dark/5 focus-visible:outline-none sm:min-w-32;
+}
+
+.btn-search-toggle {
+  @apply flex size-full cursor-pointer items-center justify-center rounded-r-full border-l border-text-dark/10 transition-colors hover:bg-dark/5 focus-visible:outline-none;
+}
+
+.btn-social {
+  @apply flex size-19 cursor-pointer items-center justify-center rounded-3xl border border-border bg-body p-0 text-[32px] text-dark transition hover:border-secondary hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary;
+}
+
+.accordion-header {
+  @apply flex w-full cursor-pointer items-center justify-between px-8 py-4 text-lg text-text-dark;
 }

@@ -98,7 +98,7 @@ const CourseSingle = async ({
             </div>
             <button
               type="button"
-              className="inline-flex self-start items-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-text-dark"
+              className="btn btn-primary self-start gap-2 py-3"
             >
               <FaShareNodes /> Share
             </button>
@@ -113,10 +113,14 @@ const CourseSingle = async ({
                 height={586}
                 sizes="(max-width: 1023px) 100vw, 66vw"
                 alt={title}
-                className="aspect-[512/293] w-full object-cover"
+                className="aspect-512/293 w-full object-cover"
               />
-              <span className="absolute left-1/2 top-1/2 flex size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-body/85 text-secondary shadow-lg backdrop-blur-sm">
-                <FaPlay className="ml-1 text-2xl" />
+
+              {/* Play button */}
+              <span className="absolute left-1/2 top-1/2 flex size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[20px] border border-dark/25 bg-course-play/80 cursor-pointer shadow-lg backdrop-blur-sm">
+                <span className="flex size-12 items-center justify-center rounded-full bg-body/95 text-course-play">
+                  <FaPlay aria-hidden="true" className="ml-1 text-[22px]" />
+                </span>
               </span>
             </div>
             <div className="mt-8 lg:absolute lg:right-0 lg:top-0 lg:z-10 lg:mt-0 lg:w-[calc(33.333%-1.25rem)]">

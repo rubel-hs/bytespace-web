@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useRef, useState } from "react";
+import { type ReactNode, useEffect, useId, useRef, useState } from "react";
 import {
   FaArrowDownWideShort,
   FaArrowRotateLeft,
@@ -31,30 +31,69 @@ const FilterDropdown = ({
   align?: "left" | "right";
   onChange: (value: string) => void;
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const menuId = useId();
   const selectedLabel =
     options.find((option) => option.value === value)?.label ?? label;
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const closeOnOutsideClick = (event: PointerEvent) => {
+      if (!dropdownRef.current?.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+
+    document.addEventListener("pointerdown", closeOnOutsideClick);
+    document.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.removeEventListener("pointerdown", closeOnOutsideClick);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isOpen]);
+
+  const selectOption = (nextValue: string) => {
+    setIsOpen(false);
+    onChange(nextValue);
+  };
+
   return (
-    <div className="group/menu relative z-20 shrink-0">
+    <div
+      ref={dropdownRef}
+      className={`relative w-fit max-w-full shrink-0 ${isOpen ? "z-[130]" : "z-[110]"}`}
+    >
       <input type="hidden" name={name} value={value} />
       <button
         type="button"
         aria-label={`${label}: ${selectedLabel}`}
         aria-haspopup="menu"
-        className="course-filter min-w-max cursor-pointer focus-visible:outline-none"
+        aria-controls={menuId}
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((open) => !open)}
+        className="btn-filter min-w-max"
       >
         {icon}
         <span>{selectedLabel}</span>
-        <FaChevronDown className="ml-1 text-[10px] transition-transform group-hover/menu:rotate-180" />
+        <FaChevronDown
+          className={`ml-1 text-[10px] transition-transform ${isOpen ? "rotate-180" : ""}`}
+        />
       </button>
 
       <div
-        className={`absolute top-full hidden min-w-48 pt-2 group-hover/menu:block group-focus-within/menu:block ${
-          align === "right" ? "right-0" : "left-0"
+        className={`absolute top-full z-[140] w-max max-w-[calc(100vw-2rem)] min-w-48 pt-2 ${isOpen ? "block" : "hidden"} ${
+          align === "right" ? "left-0 lg:left-auto lg:right-0" : "left-0"
         }`}
       >
         <div
-          className="space-y-1.5 overflow-hidden rounded-lg bg-body p-1.5 text-left shadow-lg ring-1 ring-dark/5"
+          id={menuId}
+          className="max-h-[min(24rem,calc(100vh-8rem))] space-y-1.5 overflow-y-auto overscroll-contain rounded-lg bg-body p-1.5 text-left shadow-xl ring-1 ring-dark/10"
           role="menu"
           aria-label={label}
         >
@@ -62,12 +101,8 @@ const FilterDropdown = ({
             type="button"
             role="menuitemradio"
             aria-checked={!value}
-            onClick={() => onChange("")}
-            className={`block w-full rounded-md px-3 py-2 text-left text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark ${
-              !value
-                ? "bg-dark text-white hover:bg-text-dark"
-                : "bg-light text-text-dark hover:bg-border"
-            }`}
+            onClick={() => selectOption("")}
+            className={`btn-menu-item ${!value ? "btn-menu-item-active" : ""}`}
           >
             {label}
           </button>
@@ -77,12 +112,8 @@ const FilterDropdown = ({
               type="button"
               role="menuitemradio"
               aria-checked={value === option.value}
-              onClick={() => onChange(option.value)}
-              className={`block w-full rounded-md px-3 py-2 text-left text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark ${
-                value === option.value
-                  ? "bg-dark text-white hover:bg-text-dark"
-                  : "bg-light text-text-dark hover:bg-border"
-              }`}
+              onClick={() => selectOption(option.value)}
+              className={`btn-menu-item ${value === option.value ? "btn-menu-item-active" : ""}`}
             >
               {option.label}
             </button>
@@ -143,17 +174,13 @@ const CourseFilterControls = ({
     <form
       ref={formRef}
       action="/courses"
-      className="mb-7 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
+      className="relative z-[100] mb-7 flex flex-col gap-4 overflow-visible lg:flex-row lg:items-center lg:justify-between"
     >
       {q && <input type="hidden" name="q" value={q} />}
       {scope && <input type="hidden" name="scope" value={scope} />}
 
       <div className="flex flex-wrap gap-3">
-        <button
-          type="button"
-          onClick={resetFilters}
-          className="course-filter cursor-pointer focus-visible:outline-none"
-        >
+        <button type="button" onClick={resetFilters} className="btn-filter">
           <FaArrowRotateLeft /> Reset
         </button>
         <FilterDropdown

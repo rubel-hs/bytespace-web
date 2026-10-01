@@ -23,10 +23,10 @@ const Testimonials = ({ data }: { data: PageData }) => {
   if (!enable) return null;
 
   return (
-    <section className="section-box isolate overflow-hidden bg-[#FAFAFA] py-16 sm:py-20 lg:py-[74px]">
+    <section className="section-box isolate overflow-hidden bg-[#FAFAFA] py-16 sm:py-20 lg:py-18.5">
       <div
         aria-hidden="true"
-        className="absolute -top-36 left-[35%] -z-10 h-[42rem] w-[42rem] rounded-full blur-[40px] lg:-top-[138px] lg:left-[calc(50%-325px)]"
+        className="absolute -top-36 left-[35%] -z-10 h-168 w-2xl rounded-full blur-2xl lg:-top-34.5 lg:left-[calc(50%-325px)]"
         style={{
           background:
             "radial-gradient(circle, rgba(203, 252, 1, 0.4) 0%, rgba(203, 252, 1, 0.13) 53%, rgba(203, 252, 1, 0.03) 75%, rgba(203, 252, 1, 0) 100%)",
@@ -34,7 +34,7 @@ const Testimonials = ({ data }: { data: PageData }) => {
       />
       <div
         aria-hidden="true"
-        className="absolute -top-44 left-[70%] -z-10 h-[52rem] w-[52rem] rounded-full blur-[40px] lg:-top-[241px] lg:left-[calc(50%+122px)] lg:h-[1137px] lg:w-[1137px]"
+        className="absolute -top-44 left-[70%] -z-10 h-208 w-208 rounded-full blur-2xl lg:-top-60.25 lg:left-[calc(50%+122px)] lg:h-284.25 lg:w-284.25"
         style={{
           background:
             "radial-gradient(circle, rgba(203, 252, 1, 0.4) 0%, rgba(203, 252, 1, 0.13) 53%, rgba(203, 252, 1, 0.03) 75%, rgba(203, 252, 1, 0) 100%)",
@@ -42,7 +42,7 @@ const Testimonials = ({ data }: { data: PageData }) => {
       />
       <div
         aria-hidden="true"
-        className="absolute top-48 -left-[360px] -z-10 h-[58rem] w-[58rem] rounded-full blur-[40px] lg:top-[149px] lg:-left-[442px] lg:h-[1137px] lg:w-[1137px]"
+        className="absolute top-48 -left-90 -z-10 h-232 w-232 rounded-full blur-2xl lg:top-37.25 lg:-left-110.5 lg:h-284.25 lg:w-284.25"
         style={{
           background:
             "radial-gradient(circle, rgba(0, 59, 226, 0.25) 0%, rgba(0, 59, 226, 0.08) 53%, rgba(0, 59, 226, 0.02) 75%, rgba(0, 59, 226, 0) 100%)",
@@ -50,7 +50,7 @@ const Testimonials = ({ data }: { data: PageData }) => {
       />
 
       <div className="container relative z-10">
-        <div className="grid items-end gap-6 md:grid-cols-2 md:gap-10 lg:gap-[43px]">
+        <div className="grid items-end gap-6 md:grid-cols-2 md:gap-10 lg:gap-10.75">
           <h2
             className="max-w-145 text-[2rem] leading-[1.2] tracking-[-0.01em] sm:text-[2.5rem] lg:text-[44px]"
             dangerouslySetInnerHTML={markdownify(title)}

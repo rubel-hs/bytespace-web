@@ -29,7 +29,7 @@ const CreatorProfile = ({
               width={144}
               height={144}
               alt={title}
-              className="size-28 rounded-[24px] object-cover sm:size-32"
+              className="size-28 rounded-3xl object-cover sm:size-32"
             />
             <div>
               <div className="flex flex-wrap items-center gap-4">
@@ -58,10 +58,7 @@ const CreatorProfile = ({
             <span className="rounded-full bg-body px-5 py-2 text-text-dark">
               {followers ?? 0} followers
             </span>
-            <button
-              type="button"
-              className="ml-0 rounded-full bg-primary px-7 py-2.5 font-medium text-text-dark sm:ml-auto"
-            >
+            <button type="button" className="btn btn-primary ml-0 sm:ml-auto">
               Follow
             </button>
           </div>

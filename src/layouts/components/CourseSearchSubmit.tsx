@@ -18,7 +18,7 @@ const CourseSearchSubmit = ({
         type="submit"
         name="scope"
         value={scope}
-        className="min-w-28 grow rounded-l-full px-6 text-center font-medium transition-colors hover:bg-dark/5 focus-visible:outline-none sm:min-w-32"
+        className="btn-search-submit"
       >
         {scope === "creators" ? "Creators" : "Courses"}
       </button>
@@ -27,7 +27,7 @@ const CourseSearchSubmit = ({
         <button
           type="button"
           aria-label="Choose search type"
-          className="flex size-full items-center justify-center rounded-r-full border-l border-text-dark/10 transition-colors hover:bg-dark/5 focus-visible:outline-none"
+          className="btn-search-toggle"
         >
           <FaChevronDown className="text-xs transition-transform group-hover/menu:rotate-180" />
         </button>
@@ -39,11 +39,7 @@ const CourseSearchSubmit = ({
               name="scope"
               value="courses"
               onClick={() => setScope("courses")}
-              className={`block w-full rounded-md px-3 py-2 text-left text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark ${
-                scope === "courses"
-                  ? "bg-dark text-white hover:bg-text-dark"
-                  : "bg-light text-text-dark hover:bg-border"
-              }`}
+              className={`btn-menu-item ${scope === "courses" ? "btn-menu-item-active" : ""}`}
             >
               Search Courses
             </button>
@@ -52,11 +48,7 @@ const CourseSearchSubmit = ({
               name="scope"
               value="creators"
               onClick={() => setScope("creators")}
-              className={`block w-full rounded-md px-3 py-2 text-left text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark ${
-                scope === "creators"
-                  ? "bg-dark text-white hover:bg-text-dark"
-                  : "bg-light text-text-dark hover:bg-border"
-              }`}
+              className={`btn-menu-item ${scope === "creators" ? "btn-menu-item-active" : ""}`}
             >
               Search Creators
             </button>

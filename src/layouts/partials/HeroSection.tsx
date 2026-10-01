@@ -38,10 +38,10 @@ const HeroSection = ({ data }: { data: HeroSectionData }) => {
               dangerouslySetInnerHTML={markdownify(data.content ?? "")}
             />
             {data.search?.enable && (
-              <div className="mx-auto flex w-full max-w-[700px] flex-col items-center gap-3 sm:flex-row sm:items-stretch sm:justify-center sm:gap-5">
+              <div className="mx-auto flex w-full max-w-175 flex-col items-center gap-3 sm:flex-row sm:items-stretch sm:justify-center sm:gap-5">
                 <label
                   data-search-trigger
-                  className="flex h-[52px] min-h-[52px] w-full max-w-[460px] min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-full bg-white px-5 text-left text-text-light shadow-sm"
+                  className="flex h-13 min-h-13 w-full max-w-115 min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-full bg-white px-5 text-left text-text-light shadow-sm"
                 >
                   <FaSearch aria-hidden="true" className="size-5 shrink-0" />
                   <input
@@ -55,7 +55,7 @@ const HeroSection = ({ data }: { data: HeroSectionData }) => {
                 <button
                   type="button"
                   data-search-trigger
-                  className="btn btn-primary h-[52px] min-h-[52px] w-full max-w-[460px] px-8 text-lg sm:w-auto sm:max-w-none"
+                  className="btn btn-primary h-13 min-h-13 w-full max-w-115 px-8 text-lg sm:w-auto sm:max-w-none"
                 >
                   {data.search.button_label ?? "Search"}
                 </button>
@@ -64,7 +64,7 @@ const HeroSection = ({ data }: { data: HeroSectionData }) => {
           </div>
           {data.image && (
             <div className="col-12">
-              <div className="relative mx-auto w-[800px] max-w-full translate-x-12">
+              <div className="relative mx-auto w-200 max-w-full translate-x-12">
                 <ImageFallback
                   src={data.image}
                   className="h-auto w-full"

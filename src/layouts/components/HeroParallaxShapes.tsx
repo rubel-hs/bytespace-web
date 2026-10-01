@@ -28,9 +28,9 @@ const HeroParallaxShapes = () => {
       const progress = clamp(-top / Math.max(height, 1));
       const sideScale = 1 + progress * 0.025;
 
-      shapes.style.setProperty("--hero-left-x", `${progress * -64}px`);
-      shapes.style.setProperty("--hero-right-x", `${progress * 64}px`);
-      shapes.style.setProperty("--hero-side-y", `${progress * -64}px`);
+      shapes.style.setProperty("--hero-left-x", `${progress * -110}px`);
+      shapes.style.setProperty("--hero-right-x", `${progress * 110}px`);
+      shapes.style.setProperty("--hero-side-y", `${progress * -110}px`);
       shapes.style.setProperty("--hero-side-scale", sideScale.toString());
       shapes.style.setProperty(
         "--hero-center-scale",
@@ -83,7 +83,7 @@ const HeroParallaxShapes = () => {
         width={267}
         height={387}
         loading="eager"
-        className="shape-reveal shape-reveal--1 hero-parallax-side hero-parallax-side--left absolute left-[-4rem] top-[36%] hidden w-56 md:block lg:left-[-7vw] lg:top-[20.5%] lg:w-[clamp(310px,27vw,460px)]"
+        className="shape-reveal shape-reveal--1 hero-parallax-side hero-parallax-side--left absolute -left-16 top-[36%] hidden w-56 md:block lg:left-[-7vw] lg:top-[20.5%] lg:w-[clamp(310px,27vw,460px)]"
         sizes="(min-width: 1024px) 27vw, 224px"
       />
       <Image
@@ -91,7 +91,7 @@ const HeroParallaxShapes = () => {
         alt=""
         width={213}
         height={372}
-        className="shape-reveal shape-reveal--2 hero-parallax-side hero-parallax-side--right absolute right-[-5rem] top-[36%] hidden w-48 md:block lg:right-[-6vw] lg:top-[19.5%] lg:w-[clamp(224px,20vw,340px)]"
+        className="shape-reveal shape-reveal--2 hero-parallax-side hero-parallax-side--right absolute -right-20 top-[36%] hidden w-48 md:block lg:right-[-6vw] lg:top-[19.5%] lg:w-[clamp(224px,20vw,340px)]"
         sizes="(min-width: 1024px) 20vw, 192px"
       />
       <Image

@@ -10,11 +10,11 @@ images:
   - src: "/images/shape/cta-white-squiggle.png"
     width: 177
     height: 176
-    className: "left-[12vw] top-0 origin-top-left xl:left-[210px]"
+    className: "left-[12vw] top-0 origin-top-left xl:left-52.5"
   - src: "/images/shape/cta-lime-cone.png"
     width: 190
     height: 189
-    className: "right-[12vw] top-0 origin-top-right xl:right-[210px]"
+    className: "right-[12vw] top-0 origin-top-right xl:right-52.5"
   - src: "/images/shape/cta-white-cone-right.png"
     width: 218
     height: 372
@@ -22,11 +22,11 @@ images:
   - src: "/images/shape/cta-white-cone-left.png"
     width: 140
     height: 189
-    className: "bottom-[93px] left-0 origin-bottom-left"
+    className: "bottom-23.25 left-0 origin-bottom-left"
   - src: "/images/shape/cta-lime-loop.png"
     width: 346
     height: 190
-    className: "bottom-0 left-[20px] origin-bottom-left"
+    className: "bottom-0 left-5 origin-bottom-left"
   - src: "/images/shape/cta-lime-squiggle-bottom.png"
     width: 334
     height: 199

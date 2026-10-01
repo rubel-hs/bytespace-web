@@ -37,7 +37,7 @@ const fields = [
 export default function SignUpPage() {
   return (
     <div className="auth-page signup-page min-h-screen overflow-hidden text-light">
-      <header className="mx-auto flex h-[104px] w-full max-w-[1196px] items-center px-6 sm:h-[120px] xl:px-0">
+      <header className="mx-auto flex h-26 w-full max-w-299 items-center px-6 sm:h-30 xl:px-0">
         <Link
           href="/"
           aria-label="ByteSpace home"
@@ -45,21 +45,21 @@ export default function SignUpPage() {
         >
           <Image
             src="/images/favicon.png"
-            alt="ByteSpace"
-            width={171}
-            height={37}
+            alt=""
+            width={29}
+            height={32}
             priority
-            className="h-auto w-[171px]"
+            className="h-8 w-auto"
           />
         </Link>
       </header>
 
-      <main className="mx-auto grid w-full max-w-[1246px] gap-12 px-6 pb-16 lg:grid-cols-[minmax(0,1fr)_minmax(460px,579px)] lg:items-start lg:gap-[72px] xl:gap-24 xl:px-0">
+      <main className="mx-auto grid w-full max-w-311.5 gap-12 px-6 pb-16 lg:grid-cols-[minmax(0,1fr)_minmax(460px,579px)] lg:items-start lg:gap-18 xl:gap-24 xl:px-0">
         <section
-          className="flex min-w-0 flex-col lg:pl-[25px]"
+          className="flex min-w-0 flex-col lg:pl-6.25"
           aria-labelledby="signup-intro-title"
         >
-          <div className="max-w-[475px]">
+          <div className="max-w-118.75">
             <h1
               id="signup-intro-title"
               className="text-xl font-semibold leading-[1.2] tracking-[-0.01em] text-light"
@@ -80,13 +80,13 @@ export default function SignUpPage() {
             height={586}
             priority
             sizes="(max-width: 1023px) 0px, 552px"
-            className="mt-[58px] hidden h-auto w-full max-w-[552px] lg:block"
+            className="mt-14.5 hidden h-auto w-full max-w-138 lg:block"
           />
         </section>
 
         <section
           aria-labelledby="signup-form-title"
-          className="w-full rounded-3xl bg-body px-6 py-10 text-footer-text shadow-sm sm:px-10 sm:py-12 lg:min-h-[784px] lg:px-[63px] lg:py-[61px]"
+          className="w-full rounded-3xl bg-body px-6 py-10 text-footer-text shadow-sm sm:px-10 sm:py-12 lg:min-h-196 lg:px-15.75 lg:py-15.25"
         >
           <div className="flex min-h-full flex-col">
             <div>
@@ -95,7 +95,7 @@ export default function SignUpPage() {
               </p>
               <h2
                 id="signup-form-title"
-                className="mt-0 max-w-[453px] text-[38px] font-semibold leading-[1.2] tracking-[-0.01em] text-footer-text sm:text-[44px]"
+                className="mt-0 max-w-113.25 text-[38px] font-semibold leading-[1.2] tracking-[-0.01em] text-footer-text sm:text-[44px]"
               >
                 Welcome to ByteSpace
               </h2>
@@ -118,7 +118,7 @@ export default function SignUpPage() {
                       autoComplete={field.autoComplete}
                       placeholder={field.placeholder}
                       required
-                      className="mt-2 h-[52px] w-full rounded-xl border border-[#e5e6e8] bg-body px-6 text-lg leading-[1.6] text-footer-text outline-none transition placeholder:text-text-light focus:border-secondary focus:ring-2 focus:ring-secondary/15"
+                      className="mt-2 h-13 w-full rounded-xl border border-[#e5e6e8] bg-body px-6 text-lg leading-[1.6] text-footer-text outline-none transition placeholder:text-text-light focus:border-secondary focus:ring-2 focus:ring-secondary/15"
                     />
                   </div>
                 ))}
@@ -126,13 +126,13 @@ export default function SignUpPage() {
 
               <button
                 type="submit"
-                className="mt-6 ml-auto inline-flex h-[46px] items-center justify-center rounded-full bg-primary px-6 text-lg font-medium leading-[1.2] text-footer-text transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+                className="btn btn-primary mt-6 ml-auto h-11.5 leading-[1.2]"
               >
                 Continue
               </button>
             </form>
 
-            <p className="mt-[122px] text-center text-base leading-[1.6] text-text">
+            <p className="mt-30.5 text-center text-base leading-[1.6] text-text">
               Already have an account?{" "}
               <Link
                 href="/sign-in"

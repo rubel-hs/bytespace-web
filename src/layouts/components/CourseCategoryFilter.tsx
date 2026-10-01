@@ -39,11 +39,7 @@ const CourseCategoryFilter = ({
               type="button"
               aria-pressed={isActive}
               onClick={() => setActiveFilter(category)}
-              className={`rounded-full px-5 py-2.5 text-sm transition ${
-                isActive
-                  ? "bg-primary text-text-dark"
-                  : "bg-light text-text hover:bg-primary hover:text-text-dark"
-              }`}
+              className={`btn-option btn-option-lg ${isActive ? "btn-option-active" : "hover:bg-primary hover:text-text-dark"}`}
             >
               {humanize(category)}
             </button>

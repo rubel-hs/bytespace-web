@@ -13,7 +13,7 @@ const CallToAction = ({ data }: { data: PageData }) => {
   return (
     <>
       {data.frontmatter.enable && (
-        <section className="relative min-h-[488px] overflow-hidden bg-secondary text-body">
+        <section className="relative min-h-122 overflow-hidden bg-secondary text-body">
           <div
             aria-hidden="true"
             className="absolute inset-0 text-body opacity-12"
@@ -28,7 +28,7 @@ const CallToAction = ({ data }: { data: PageData }) => {
             <Image
               key={shape.src}
               aria-hidden="true"
-              className={`pointer-events-none absolute block select-none [scale:0.4] md:[scale:0.6] xl:[scale:1] ${shape.className}`}
+              className={`pointer-events-none absolute block select-none scale-[0.4] md:scale-[0.6] xl:scale-[1] ${shape.className}`}
               src={shape.src}
               width={shape.width}
               height={shape.height}
@@ -36,17 +36,17 @@ const CallToAction = ({ data }: { data: PageData }) => {
             />
           ))}
 
-          <div className="container relative flex min-h-[488px] items-center justify-center py-16">
-            <div className="mx-auto flex w-full max-w-[964px] flex-col items-center gap-10 text-center">
+          <div className="container relative flex min-h-122 items-center justify-center py-16">
+            <div className="mx-auto flex w-full max-w-241 flex-col items-center gap-10 text-center">
               <h2
                 dangerouslySetInnerHTML={markdownify(data.frontmatter.title)}
-                className="m-0 max-w-[710px] text-[2rem] leading-[1.2] tracking-[-0.01em] text-light md:text-[44px]"
+                className="m-0 max-w-177.5 text-[2rem] leading-[1.2] tracking-[-0.01em] text-light md:text-[44px]"
               />
               <p
                 dangerouslySetInnerHTML={markdownify(
                   data.frontmatter.description,
                 )}
-                className="m-0 max-w-[964px] text-base leading-[1.6] text-light md:text-lg"
+                className="m-0 max-w-241 text-base leading-[1.6] text-light md:text-lg"
               />
               {data.frontmatter.button.enable && (
                 <Link

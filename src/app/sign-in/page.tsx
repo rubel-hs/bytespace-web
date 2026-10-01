@@ -30,7 +30,7 @@ const fields = [
 export default function SignInPage() {
   return (
     <div className="auth-page signin-page min-h-screen overflow-hidden text-light">
-      <header className="mx-auto flex h-[104px] w-full max-w-[1196px] items-center px-6 sm:h-[120px] xl:px-0">
+      <header className="mx-auto flex h-26 w-full max-w-299 items-center px-6 sm:h-30 xl:px-0">
         <Link
           href="/"
           aria-label="ByteSpace home"
@@ -47,12 +47,12 @@ export default function SignInPage() {
         </Link>
       </header>
 
-      <main className="mx-auto grid w-full max-w-[1246px] gap-12 px-6 pb-16 lg:grid-cols-[minmax(0,1fr)_minmax(460px,579px)] lg:items-start lg:gap-[72px] xl:gap-24 xl:px-0">
+      <main className="mx-auto grid w-full max-w-311.5 gap-12 px-6 pb-16 lg:grid-cols-[minmax(0,1fr)_minmax(460px,579px)] lg:items-start lg:gap-18 xl:gap-24 xl:px-0">
         <section
-          className="flex min-w-0 flex-col lg:pl-[25px]"
+          className="flex min-w-0 flex-col lg:pl-6.25"
           aria-labelledby="signin-intro-title"
         >
-          <div className="max-w-[475px]">
+          <div className="max-w-118.75">
             <h1
               id="signin-intro-title"
               className="text-xl font-semibold leading-[1.2] tracking-[-0.01em] text-light"
@@ -72,13 +72,13 @@ export default function SignInPage() {
             height={586}
             priority
             sizes="(max-width: 1023px) 0px, 552px"
-            className="mt-[58px] hidden h-auto w-full max-w-[552px] lg:block"
+            className="mt-14.5 hidden h-auto w-full max-w-138 lg:block"
           />
         </section>
 
         <section
           aria-labelledby="signin-form-title"
-          className="w-full rounded-3xl bg-body px-6 py-10 text-footer-text shadow-sm sm:px-10 sm:py-12 lg:h-[784px] lg:px-[63px] lg:py-[61px]"
+          className="w-full rounded-3xl bg-body px-6 py-10 text-footer-text shadow-sm sm:px-10 sm:py-12 lg:h-196 lg:px-15.75 lg:py-15.25"
         >
           <div className="flex h-full flex-col">
             <div>
@@ -108,7 +108,7 @@ export default function SignInPage() {
                       autoComplete={field.autoComplete}
                       placeholder={field.placeholder}
                       required
-                      className="mt-2 h-[52px] w-full rounded-xl border border-[#e5e6e8] bg-body px-6 text-lg leading-[1.6] text-footer-text outline-none transition placeholder:text-text-light focus:border-secondary focus:ring-2 focus:ring-secondary/15"
+                      className="mt-2 h-13 w-full rounded-xl border border-[#e5e6e8] bg-body px-6 text-lg leading-[1.6] text-footer-text outline-none transition placeholder:text-text-light focus:border-secondary focus:ring-2 focus:ring-secondary/15"
                     />
                   </div>
                 ))}
@@ -116,13 +116,16 @@ export default function SignInPage() {
 
               <button
                 type="submit"
-                className="mt-6 ml-auto inline-flex h-[46px] items-center justify-center rounded-full bg-primary px-6 text-lg font-medium leading-[1.2] text-footer-text transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+                className="btn btn-primary mt-6 ml-auto h-11.5 leading-[1.2]"
               >
                 Sign In
               </button>
             </form>
 
-            <div className="mt-[86px] flex items-center gap-3 text-base leading-none text-text-light" aria-hidden="true">
+            <div
+              className="mt-21.5 flex items-center gap-3 text-base leading-none text-text-light"
+              aria-hidden="true"
+            >
               <span className="h-px flex-1 bg-border" />
               <span>or</span>
               <span className="h-px flex-1 bg-border" />
@@ -132,14 +135,14 @@ export default function SignInPage() {
               <button
                 type="button"
                 aria-label="Sign in with Facebook"
-                className="flex size-[76px] items-center justify-center rounded-3xl border border-border bg-body text-[32px] text-dark transition hover:border-secondary hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+                className="btn-social"
               >
                 <FaFacebookF aria-hidden="true" />
               </button>
               <button
                 type="button"
                 aria-label="Sign in with Google"
-                className="flex size-[76px] items-center justify-center rounded-3xl border border-border bg-body text-[32px] text-dark transition hover:border-secondary hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+                className="btn-social"
               >
                 <FaGoogle aria-hidden="true" />
               </button>
