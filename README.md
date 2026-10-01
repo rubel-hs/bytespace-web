@@ -1,81 +1,57 @@
-<h1 align=center>Bytespace</h1>
+# Bytespace
 
-<p align=center>Bytespace is built with Next.js, Tailwind CSS, and TypeScript.</p>
+Bytespace is a course marketplace built with Next.js. Courses, creators, reviews, and supporting page content are managed as Markdown files in the repository.
 
-<p align=center>Made with ♥ by Bytespace</p>
-<p align=center>If you find this project useful, please give it a ⭐ to show your support. </p>
+## Run locally
 
-<h2 align="center">Bytespace</h2>
-</h2>
-
-<p align=center>
-
-  <a href="https://github.com/vercel/next.js/releases/tag/v16.1.1" alt="Contributors">
-    <img src="https://img.shields.io/static/v1?label=NEXTJS&message=16.1.1&color=000&logo=nextjs" alt="Next.js 16.1.1" />
-  </a>
-
-</p>
-
-## 📌 Key Features
-
-- 👥 Multi-Authors
-- 🎯 Similar Posts Suggestion
-- 🔍 Search Functionality
-- 🌑 Dark Mode
-- 🏷️ Tags & Categories
-- 🔗 Netlify setting pre-configured
-- 📞 Support contact form
-- 📱 Fully responsive
-- 📝 Write and update content in Markdown / MDX
-- 💬 Disqus Comment
-- 🔳 Syntax Highlighting
-- 🌏 Multilingual Support (i18n)
-
-### 📄 15+ Pre-designed Pages
-
-- 🏠 Homepage
-- 👤 About
-- 📞 Contact
-- 👥 Authors
-- 👤 Author Single
-- 📝 Blog
-- 📝 Blog Single
-- 🚫 Custom 404
-- 💡 Elements
-- 📄 Privacy Policy
-- 🏷️ Tags
-- 🏷️ Tag Single
-- 🗂️ Categories
-- 🗂️ Category Single
-- 🔍 Search
-
-## 🚀 Getting Started
-
-### 📦 Dependencies
-
-- next 16.1+
-- node v22.10+
-- npm v10.2+
-- tailwind v4.0+
-
-### 👉 Install Dependencies
+Requirements: Node.js 22+ and pnpm.
 
 ```bash
-npm install
+pnpm install
+pnpm dev
 ```
 
-### 👉 Development Command
+Open [http://localhost:3000](http://localhost:3000).
 
-```bash
-npm run dev
+
+Use the provided `pnpm` commands instead of running Next.js directly. They generate the theme CSS and searchable content data before starting or building the app.
+
+## Technologies
+
+- Next.js 16 with the App Router
+- React 19 and TypeScript
+- Tailwind CSS 4
+- Markdown and MDX with YAML frontmatter
+- pnpm
+
+## Project structure
+
+```text
+src/
+├── app/       # Routes, pages, and the root layout
+├── content/   # Markdown content for courses, creators, reviews, and pages
+├── config/    # Site, navigation, social, and theme settings
+├── layouts/   # Reusable components, partials, and MDX shortcodes
+├── lib/       # Content parsing, course relations, and utilities
+└── styles/    # Tailwind entry point and shared styles
+public/        # Images, videos, icons, and other static files
+scripts/       # Theme and searchable JSON generators
 ```
 
-### 👉 Build Command
+### Content and course relations
 
-```bash
-npm run build
-```
+Content lives in `src/content/`. The course marketplace uses three Markdown collections:
 
-## 📝 License
+- `courses/` contains course details and references a creator with the `course_creator` slug.
+- `course_creators/` contains creator profiles. A creator's courses are found from matching `course_creator` values.
+- `course_reviews/` contains one review collection per course and references it with the `course` slug.
 
-Copyright (c) 2023–present, Bytespace.
+A slug is the Markdown filename without `.md`. For example, `course_creator: "codecraft-labs"` points to `course_creators/codecraft-labs.md`.
+
+See `src/content/CONTENT_MODEL.md` for the required fields and relation rules.
+
+### Theming and typography
+
+Colors, font families, and the type scale are configured in `src/config/theme.json`. The development and build commands turn that configuration into `src/styles/generated-theme.css`; edit the JSON source, not the generated CSS file.
+
+Tailwind and shared style layers are loaded from `src/styles/main.css`. Satoshi is used for body text and Poppins for headings by default, with both font families loaded in the root layout.
